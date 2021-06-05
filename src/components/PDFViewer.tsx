@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Document, Page } from "@react-pdf/renderer";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-export default function PDFDisplay(props: { pdf: any }) {
+export default function PDFViewer(props: { pdf: any }) {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 

@@ -1,7 +1,7 @@
 import React from "react";
-import PDFDisplay from "./PDFDisplay";
-import resume from "../PDFs/David Koser Web Developer Resume.pdf";
+import PDFViewer from "./PDFViewer";
+import resume from "../PDF/David_Koser_Web_Developer_Resume.pdf";
 
 export default function Home() {
-  return <PDFDisplay pdf={resume} />;
+  return <PDFViewer pdf={resume} />;
 }
