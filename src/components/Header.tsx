@@ -1,18 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 
 function Header() {
   return (
     <header>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="TopTableGames">TopTableGames</Link>
-        <Link to="">About Me
-        </Link>
-      </nav>
+      <a href="#aboutMe">About Me</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+      <a href="#portfolio">Portfolio</a>
     </header>
   );
 }
 
-export default withRouter(Header);
+export default Header;
