@@ -7,25 +7,16 @@ export default function PortfolioProject() {
     (state: ReduxState) => state.portfolioContent
   );
   const [thisProject, setThisProject] = useState<Project>(portfolioContent[0]);
-  const [mobileView, setMobileView] = useState(false);
 
   return (
     <main id="portfolioProject">
-      <button onClick={() => setMobileView(!mobileView)}>
-        {mobileView ? "To Mobile View" : "To Desktop View"}
-      </button>
       <button onClick={() => setThisProject(portfolioContent[0])}>
         BackyardRestoration.net
       </button>
       <button onClick={() => setThisProject(portfolioContent[1])}>
         TopTableGames.net
       </button>
-      <iframe
-        id="portfolioIFrame"
-        className={mobileView ? "mobileView" : "desktopView"}
-        src={thisProject.src}
-        title={thisProject.title}
-      />
+      <img src={thisProject.image} alt={`${thisProject.title} preview`} />
     </main>
   );
 }

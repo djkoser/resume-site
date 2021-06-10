@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactInfo() {
   return (
-    <section>
+    <section id="contactInfo">
       <h2>Contact Information</h2>
       <ul>
         <li>

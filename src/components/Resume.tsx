@@ -26,7 +26,8 @@ export default function Resume(props: { pdf: any }) {
   const { pdf } = props;
 
   return (
-    <>
+    <section id="resume">
+      <h2>My Resume</h2>
       <Document
         file={pdf}
         options={{ workerSrc: "/pdf.worker.js" }}
@@ -52,6 +53,6 @@ export default function Resume(props: { pdf: any }) {
           Download Resume
         </a>
       </div>
-    </>
+    </section>
   );
 }

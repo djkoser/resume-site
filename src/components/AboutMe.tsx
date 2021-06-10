@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <main id="aboutMe">
+    <section id="aboutMe">
       <h1>About Me</h1>
       <article>
         I am an emerging web developer at DevMountain Student Developers, and
@@ -56,6 +56,6 @@ export default function AboutMe() {
         <br />
         Thank you and have a fantastic day.
       </article>
-    </main>
+    </section>
   );
 }
