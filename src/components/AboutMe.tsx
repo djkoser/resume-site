@@ -18,6 +18,7 @@ export default function AboutMe() {
         2020, I graduated with a Bachelor of Arts in Biology from Saint Olaf
         College in May of 2015.
         <br />
+        <br />
         My DevMountain coursework covered full-stack web development
         technologies in a React-based environment. More specifically, these
         primarily included: Javascript, React, Redux, NodeJs, Express,
@@ -27,6 +28,7 @@ export default function AboutMe() {
         group project website. The latter was completed by a group of three
         students, including myself, within a remote environment leveraging git,
         GitHub and Trello for project management.
+        <br />
         <br />
         When coupling my masters coursework with my previous work experience and
         participation in a greenhouse production and plant-health-oriented
@@ -46,15 +48,18 @@ export default function AboutMe() {
         adaptable and teachable, possessing the ability to quickly learn new:
         technologies, processes, and company standards.
         <br />
+        <br />
         Ideally, I would like to work in a role which affords me the opportunity
         to combine my biology and horticultural background with my programming
         skills and technical abilities. Thank you for taking an interst in my
         portfolio and I look forward to hearing from you soon.
         <br />
+        <br />
         Please reach out to me by email at koser.david@gmail.com or by phone at
         (507) 440-8334.
         <br />
-        Thank you and have a fantastic day.
+        <br />
+        Thank you and have a fantastic day!
       </article>
     </section>
   );

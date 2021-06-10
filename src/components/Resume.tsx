@@ -46,7 +46,7 @@ export default function Resume(props: { pdf: any }) {
           Next
         </button>
         <a
-          href="/David_Koser_Web_Developer_Resume.pdf"
+          href="/media/David_Koser_Web_Developer_Resume.pdf"
           target="_blank"
           download
         >
