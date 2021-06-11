@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Home() {
   return (
@@ -7,11 +7,9 @@ export default function Home() {
       <img src="./media/Head.jpg" alt="David Koser headshot" />
       <article>
         Hello! My name is David Koser
-        <br />I am an emerging web-developer/software engineer focusing on
-        Typescript in a React.js environment. Screenshots, descriptions and
-        links to my previous projects and their associated GitHub respositories
-        can be found under the "Projects" dropdown. My resume can be viewed and
-        downloaded below.
+        <br />I am an emerging web-developer/software engineer focusing on Typescript in a React.js environment.
+        Screenshots, descriptions and links to my previous projects and their associated GitHub respositories can be
+        found under the &quot;Projects&quot; dropdown. My resume can be viewed and downloaded below.
         <br />
         <h3>Thanks for visiting!</h3>
       </article>

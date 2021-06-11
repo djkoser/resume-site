@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-undef
 module.exports = {
+    'parser': '@typescript-eslint/parser',
     'env': {
         'browser': true,
         'es2021': true
@@ -16,7 +17,9 @@ module.exports = {
         'sourceType': 'module'
     },
     'plugins': [
-        'react'
+        'react',
+        '@typescript-eslint',
+        'prettier'
     ],
     'rules': {
         'quotes': [
@@ -28,7 +31,12 @@ module.exports = {
             'always'
         ],
         'react/prop-types': 0,
-        'comma-dangle': ['error', 'never']
-
+        'comma-dangle': ['error', 'never'],
+        'no-undef': 0
+    },
+    'settings': {
+        'react': {
+            'version': 'detect'
+        }
     }
 };
