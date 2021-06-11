@@ -6,8 +6,8 @@ import { Slide } from 'react-slideshow-image';
 export default function PortfolioProject() {
   const portfolioContent: Project[] = useSelector((state: ReduxState) => state.portfolioContent);
   const [thisProject, setThisProject] = useState<Project>(portfolioContent[0]);
+  // eslint-disable-next-line no-undef
   const [mappedSlides, setMappedSlides] = useState<JSX.Element[]>();
-  console.log(mappedSlides);
   useEffect(() => {
     setMappedSlides(
       thisProject.images.map((el) => (

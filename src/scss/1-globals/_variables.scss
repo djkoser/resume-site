@@ -2,11 +2,14 @@ $cormorant: 'Cormorant Garamond', serif;
 $montserrat: 'Montserrat', sans-serif;
 $playfair: 'Playfair Display', serif;
 
-$purple: #66216e;
-$blue: #58a4b0;
-$cream: #f4e9cd;
-$green: #3e442b;
-$grey: #6a7062;
+$purple: rgb(102, 33, 110);
+$blue: rgb(88, 164, 176);
+$cream: rgb(244, 233, 205);
+$orange: rgb(217, 108, 6);
+$grey: rgb(143, 131, 137);
+
+$headerMaximized: 60px;
+$headerMinimized: 40px;
 
 $corners: 5px;
 $boxShadow: 0px 2px 2px 0px $grey;

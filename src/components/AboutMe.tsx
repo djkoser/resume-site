@@ -3,7 +3,7 @@ import React from 'react';
 export default function AboutMe() {
   return (
     <section id="aboutMe">
-      <h1>About Me</h1>
+      <h2>About Me</h2>
       <article>
         I am an emerging web developer at DevMountain Student Developers, and recent graduate of the University of
         Minnesota with a Master of Professional Studies in Horticulture. Currently, I am seeking opportunities in web
@@ -38,7 +38,7 @@ export default function AboutMe() {
         <br />
         Ideally, I would like to work in a role which affords me the opportunity to combine my biology and horticultural
         background with my programming skills and technical abilities. Thank you for taking an interst in my portfolio
-        and I look forward to hearing from you soon.
+        and I look forward to hearing from you.
         <br />
         <br />
         Please reach out to me by email at koser.david@gmail.com or by phone at (507) 440-8334.

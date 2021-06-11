@@ -1,0 +1,32 @@
+#header,
+#headerPlaceholder {
+  position: sticky;
+  top: 0px;
+  min-width: 100vw;
+  transition: all 0.3s;
+  font-family: $montserrat;
+}
+
+#header {
+  @extend %evenSpacingFlex;
+}
+
+.normal {
+  height: $headerMaximized;
+  font-size: 1.5em;
+  color: $purple;
+  background-color: $cream;
+}
+
+.stickyShrink {
+  height: $headerMinimized;
+  background-color: $purple;
+  z-index: 1;
+  color: $cream;
+}
+
+.stickyShrink .highlight {
+  border-top: solid $cream;
+  border-bottom: solid $cream;
+  padding: 4px;
+}

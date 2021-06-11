@@ -32,7 +32,7 @@ module.exports = {
         ],
         'react/prop-types': 0,
         'comma-dangle': ['error', 'never'],
-        'no-undef': 0
+        'no-unused-vars': 0
     },
     'settings': {
         'react': {

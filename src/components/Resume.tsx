@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
-export default function Resume(props: { pdf: any }) {
+export default function Resume() {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -23,12 +23,13 @@ export default function Resume(props: { pdf: any }) {
     changePage(1);
   }
 
-  const { pdf } = props;
-
   return (
     <section id="resume">
       <h2>My Resume</h2>
-      <Document file={pdf} options={{ workerSrc: '/pdf.worker.js' }} onLoadSuccess={onDocumentLoadSuccess}>
+      <Document
+        file="media/David_Koser_Web_Developer_Resume.pdf"
+        options={{ workerSrc: '/pdf.worker.js' }}
+        onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
       <div>

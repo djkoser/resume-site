@@ -1,0 +1,9 @@
+#headshot {
+  max-width: 300px;
+  float: left;
+}
+#homeDescription {
+  @include greyBox(1);
+  max-width: 900px;
+  font-family: $playfair;
+}
