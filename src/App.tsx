@@ -6,6 +6,7 @@ import AboutMe from './components/AboutMe';
 import ContactInfo from './components/ContactInfo';
 import Resume from './components/Resume';
 import PortfolioProject from './components/PortfolioProject';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <AboutMe />
       <Resume />
       <PortfolioProject />
+      <Footer />
     </div>
   );
 }

@@ -10,6 +10,7 @@ function Header() {
       const contactInfo = document.querySelector('#contactInfo');
       const resume = document.querySelector('#resume');
       const portfolio = document.querySelector('#portfolioProject');
+
       if (
         home?.id === 'home' &&
         aboutMe?.id === 'aboutMe' &&
@@ -17,33 +18,27 @@ function Header() {
         resume?.id === 'resume' &&
         portfolio?.id === 'portfolioProject'
       ) {
-        console.log(window.scrollY);
-        if (window.scrollY <= 0) {
+        const homeTop = Math.round(home.getBoundingClientRect().top);
+        const contactInfoTop = Math.round(contactInfo.getBoundingClientRect().top);
+        const aboutMeTop = Math.round(aboutMe.getBoundingClientRect().top);
+        const resumeTop = Math.round(resume.getBoundingClientRect().top);
+        const portfolioTop = Math.round(portfolio.getBoundingClientRect().top);
+
+        console.log(homeTop, contactInfoTop, aboutMeTop, resumeTop, portfolioTop);
+        if (window.scrollY === 0) {
           setStickyShrink(false);
         } else {
           setStickyShrink(true);
         }
-        if (
-          window.scrollY >= home.getBoundingClientRect().top &&
-          window.scrollY < contactInfo.getBoundingClientRect().top
-        ) {
+        if (homeTop <= 0 && contactInfoTop > 0 && aboutMeTop > 0 && resumeTop > 0 && portfolioTop > 0) {
           setScrollPosition('home');
-        } else if (
-          window.scrollY >= contactInfo.getBoundingClientRect().top &&
-          window.scrollY < aboutMe.getBoundingClientRect().top
-        ) {
+        } else if (homeTop <= 0 && contactInfoTop <= 0 && aboutMeTop > 0 && resumeTop > 0 && portfolioTop > 0) {
           setScrollPosition('contactInfo');
-        } else if (
-          window.scrollY >= aboutMe.getBoundingClientRect().top &&
-          window.scrollY < resume.getBoundingClientRect().top
-        ) {
+        } else if (homeTop <= 0 && contactInfoTop <= 0 && aboutMeTop <= 0 && resumeTop > 0 && portfolioTop > 0) {
           setScrollPosition('aboutMe');
-        } else if (
-          window.scrollY >= resume.getBoundingClientRect().top &&
-          window.scrollY < portfolio.getBoundingClientRect().top
-        ) {
+        } else if (homeTop <= 0 && contactInfoTop <= 0 && aboutMeTop <= 0 && resumeTop <= 0 && portfolioTop > 0) {
           setScrollPosition('resume');
-        } else if (window.scrollY >= portfolio.getBoundingClientRect().top) {
+        } else if (homeTop <= 0 && contactInfoTop <= 0 && aboutMeTop <= 0 && resumeTop <= 0 && portfolioTop <= 0) {
           setScrollPosition('portfolio');
         }
       }
@@ -67,7 +62,7 @@ function Header() {
         <a href="#resume" className={scrollPosition === 'resume' ? 'highlight' : ''}>
           Resume
         </a>
-        <a href="#portfolio" className={scrollPosition === 'portfolio' ? 'highlight' : ''}>
+        <a href="#portfolioProject" className={scrollPosition === 'portfolio' ? 'highlight' : ''}>
           Portfolio
         </a>
       </header>

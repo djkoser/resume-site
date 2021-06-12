@@ -19,10 +19,10 @@ export default function PortfolioProject() {
   }, [thisProject]);
 
   return (
-    <main id="portfolioProject">
+    <section id="portfolioProject">
       <button onClick={() => setThisProject(portfolioContent[0])}>BackyardRestoration.net</button>
       <button onClick={() => setThisProject(portfolioContent[1])}>TopTableGames.net</button>
       <Slide easing="ease">{mappedSlides}</Slide>
-    </main>
+    </section>
   );
 }
