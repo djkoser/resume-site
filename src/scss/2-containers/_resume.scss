@@ -1,0 +1,21 @@
+#resume {
+  background-color: $orange;
+}
+
+#resumeControls {
+  @extend %columnFlex;
+  margin-top: 20px;
+}
+#pageIndicator {
+  font-size: 1.5em;
+}
+#pageButtonBox {
+  @extend %evenSpacingFlex;
+  width: 200px;
+}
+#resume > * {
+  color: $cream;
+}
+#resumeHeader {
+  color: $cream;
+}

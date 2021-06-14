@@ -1,10 +1,22 @@
+#portfolioProject {
+  background-color: $grey;
+  display: inline-block;
+}
 .each-slide {
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @extend %rowFlex;
+  height: calc(100vh - (#{$sectionPadding} * 2));
+  width: 100%;
 }
 .each-slide > img {
   object-fit: contain;
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+#buttonBox {
+  @extend %rowFlex;
+  width: 100%;
+  margin: 0px 0px 10px 0px;
+}
+.portfolioButtons {
+  margin: auto;
 }

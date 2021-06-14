@@ -1,9 +1,18 @@
+#home > * {
+  color: $grey;
+}
 #headshot {
   max-width: 300px;
-  float: left;
+}
+#headDesc {
+  @extend %wrapFlex;
+  margin-top: $sectionPadding;
 }
 #homeDescription {
-  @include greyBox(1);
-  max-width: 900px;
   font-family: $playfair;
+  width: 300px;
+  margin: 30px;
+}
+#downloadLink {
+  font-size: 1.5em;
 }

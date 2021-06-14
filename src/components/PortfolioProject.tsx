@@ -20,8 +20,14 @@ export default function PortfolioProject() {
 
   return (
     <section id="portfolioProject">
-      <button onClick={() => setThisProject(portfolioContent[0])}>BackyardRestoration.net</button>
-      <button onClick={() => setThisProject(portfolioContent[1])}>TopTableGames.net</button>
+      <div id="buttonBox">
+        <button className="portfolioButtons" onClick={() => setThisProject(portfolioContent[0])}>
+          BackyardRestoration.net
+        </button>
+        <button className="portfolioButtons" onClick={() => setThisProject(portfolioContent[1])}>
+          TopTableGames.net
+        </button>
+      </div>
       <Slide easing="ease">{mappedSlides}</Slide>
     </section>
   );

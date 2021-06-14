@@ -24,7 +24,6 @@ function Header() {
         const resumeTop = Math.round(resume.getBoundingClientRect().top);
         const portfolioTop = Math.round(portfolio.getBoundingClientRect().top);
 
-        console.log(homeTop, contactInfoTop, aboutMeTop, resumeTop, portfolioTop);
         if (window.scrollY === 0) {
           setStickyShrink(false);
         } else {

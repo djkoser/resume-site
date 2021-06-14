@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+#root,
+.App {
+  min-width: 100vw;
+}
 #root {
   background-color: $cream;
 }
@@ -13,9 +17,14 @@
   display: none;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
 h1 {
   font-family: $cormorant;
-  font-size: 5em;
+  font-size: 4.5em;
   border: solid 10px $purple;
   color: purple;
   width: 50vw;
@@ -26,9 +35,22 @@ h1 {
 h2 {
   font-family: $montserrat;
   font-size: 2.5em;
+  margin-bottom: 30px;
 }
 
 section {
-  padding: calc(#{$headerMinimized} + 10px);
-  height: fit-content;
+  @extend %columnFlex;
+  padding: $sectionPadding;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+article {
+  font-family: $playfair;
+  font-size: 1.2em;
+}
+
+.textBlocks {
+  max-width: 700px;
+  line-height: 1.5;
 }
