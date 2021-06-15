@@ -52,7 +52,7 @@ export default function Resume() {
       <a href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
         <Document
           file="/media/David_Koser_Web_Developer_Resume.pdf"
-          options={{ workerSrc: '/pdf.worker.js' }}
+          options={{ workerSrc: 'pdf.worker.js' }}
           onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} width={parentWidth} />
         </Document>
