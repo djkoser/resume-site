@@ -2,6 +2,9 @@
   background-color: $grey;
   display: inline-block;
 }
+#portfolioProject > * {
+  color: $cream;
+}
 .each-slide {
   @extend %rowFlex;
   height: calc(100vh - (#{$sectionPadding} * 2));
@@ -12,11 +15,47 @@
   max-height: 100%;
   max-width: 100%;
 }
-#buttonBox {
-  @extend %rowFlex;
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:before {
+  background: $cream;
+}
+.buttonBox,
+.subButtonBox {
+  @extend %wrapFlex;
   width: 100%;
-  margin: 0px 0px 10px 0px;
+}
+.buttonBox {
+  margin: 20px 0px 20px 0px;
+}
+.subButtonBox {
+  width: fit-content;
+  margin: auto;
+}
+.subButtonBox > * {
+  transition: all 1s;
+}
+#projectTitle {
+  color: $cream;
 }
 .portfolioButtons {
   margin: auto;
+  fill: $cream;
+  width: 50px;
 }
+#leftButton {
+  transform: rotate(180deg);
+}
+#projectDescription {
+  width: 100%;
+  @extend %columnFlex;
+}
+#technologyList {
+  text-align: center;
+  font-size: 1.6;
+}
+
+.projectSubheader {
+  margin: 30px 0px 30px 0px;
+}
+
+@include swipeFromRight(1s);
+@include swipeFromLeft(1s);

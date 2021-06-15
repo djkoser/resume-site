@@ -46,27 +46,27 @@ export default function Resume() {
   return (
     <section id="resume">
       <h2 id="resumeHeader">My Resume</h2>
-      <Document
-        file="media/David_Koser_Web_Developer_Resume.pdf"
-        options={{ workerSrc: '/pdf.worker.js' }}
-        onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} width={parentWidth} />
-      </Document>
-      <div id="resumeControls">
+      <a id="downloadLink" href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
+        Download
+      </a>
+      <a href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
+        <Document
+          file="media/David_Koser_Web_Developer_Resume.pdf"
+          options={{ workerSrc: '/pdf.worker.js' }}
+          onLoadSuccess={onDocumentLoadSuccess}>
+          <Page pageNumber={pageNumber} width={parentWidth} />
+        </Document>
+      </a>
+      <div id="pageButtonBox">
+        <button className="pageButton" disabled={pageNumber <= 1} onClick={previousPage}>
+          Previous
+        </button>
         <p id="pageIndicator">
           Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
         </p>
-        <div id="pageButtonBox">
-          <button disabled={pageNumber <= 1} onClick={previousPage}>
-            Previous
-          </button>
-          <button disabled={pageNumber >= numPages} onClick={nextPage}>
-            Next
-          </button>
-        </div>
-        <a id="downloadLink" href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
-          Download Resume
-        </a>
+        <button className="pageButton" disabled={pageNumber >= numPages} onClick={nextPage}>
+          Next
+        </button>
       </div>
     </section>
   );

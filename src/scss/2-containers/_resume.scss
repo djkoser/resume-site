@@ -2,16 +2,20 @@
   background-color: $orange;
 }
 
-#resumeControls {
-  @extend %columnFlex;
-  margin-top: 20px;
-}
-#pageIndicator {
-  font-size: 1.5em;
+#pageIndicator,
+#downloadLink {
+  font-size: 1.6em;
+  font-family: $cormorant;
+  margin-bottom: 20px;
 }
 #pageButtonBox {
+  margin-top: 30px;
   @extend %evenSpacingFlex;
-  width: 200px;
+  width: 90%;
+}
+.pageButton {
+  width: 100px;
+  height: 30px;
 }
 #resume > * {
   color: $cream;
