@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+declare module '*.pdf';
 declare module 'react-slideshow-image' {
   export class Zoom extends React.Component<ZoomProps & any, any> {
     goBack(): void;

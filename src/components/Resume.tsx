@@ -2,6 +2,7 @@ import { doc } from 'prettier';
 import React, { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import resume from '../media/David_Koser_Web_Developer_Resume.pdf';
 
 export default function Resume() {
   const [numPages, setNumPages] = useState(0);
@@ -50,10 +51,7 @@ export default function Resume() {
         Download
       </a>
       <a href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
-        <Document
-          file="https://davidkoser.net/media/David_Koser_Web_Developer_Resume.pdf"
-          options={{ workerSrc: '/pdf.worker.js' }}
-          onLoadSuccess={onDocumentLoadSuccess}>
+        <Document file={resume} options={{ workerSrc: '/pdf.worker.js' }} onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} width={parentWidth} />
         </Document>
       </a>
