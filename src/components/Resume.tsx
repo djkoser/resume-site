@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
+
 export default function Resume() {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
@@ -50,10 +52,7 @@ export default function Resume() {
         Download
       </a>
       <a href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
-        <Document
-          file="/media/David_Koser_Web_Developer_Resume.pdf"
-          options={{ workerSrc: 'pdf.worker.js' }}
-          onLoadSuccess={onDocumentLoadSuccess}>
+        <Document file="/media/David_Koser_Web_Developer_Resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} width={parentWidth} />
         </Document>
       </a>
