@@ -53,7 +53,7 @@ export default function Resume() {
       </a>
       <a href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
         <Document file="/media/David_Koser_Web_Developer_Resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} width={parentWidth} />
+          <Page pageNumber={pageNumber} width={parentWidth ? parentWidth - 10 : 0} />
         </Document>
       </a>
       <div id="pageButtonBox">

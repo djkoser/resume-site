@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function Header() {
   const [scrollPosition, setScrollPosition] = useState('home');
   const [stickyShrink, setStickyShrink] = useState(false);
+  const [menu, setMenu] = useState(false);
   useEffect(() => {
     const trackScroll: () => void = () => {
       const home = document.querySelector('#home');
@@ -49,21 +50,58 @@ function Header() {
   return (
     <>
       <header id="header" className={stickyShrink ? 'stickyShrink' : 'normal'}>
-        <a href="#home" className={scrollPosition === 'home' ? 'highlight' : ''}>
-          Home
-        </a>
-        <a href="#contactInfo" className={scrollPosition === 'contactInfo' ? 'highlight' : ''}>
-          Contact
-        </a>
-        <a href="#aboutMe" className={scrollPosition === 'aboutMe' ? 'highlight' : ''}>
-          About Me
-        </a>
-        <a href="#resume" className={scrollPosition === 'resume' ? 'highlight' : ''}>
-          Resume
-        </a>
-        <a href="#portfolioProject" className={scrollPosition === 'portfolio' ? 'highlight' : ''}>
-          Portfolio
-        </a>
+        <div className={menu ? 'menuOpen' : 'menuClosed'} id="linkBox">
+          <a href="#home" className={scrollPosition === 'home' ? 'highlight' : ''}>
+            Home
+          </a>
+          <a href="#contactInfo" className={scrollPosition === 'contactInfo' ? 'highlight' : ''}>
+            Contact
+          </a>
+          <a href="#aboutMe" className={scrollPosition === 'aboutMe' ? 'highlight' : ''}>
+            About Me
+          </a>
+          <a href="#resume" className={scrollPosition === 'resume' ? 'highlight' : ''}>
+            Resume
+          </a>
+          <a href="#portfolioProject" className={scrollPosition === 'portfolio' ? 'highlight' : ''}>
+            Portfolio
+          </a>
+        </div>
+        <div
+          onClick={() => setMenu(!menu)}
+          className={stickyShrink ? 'hamburgerStickyShrink' : 'hamburgerNormal'}
+          id="hamburger">
+          <div
+            className={`patties ${
+              stickyShrink && !menu
+                ? 'pattiesStickyShrink'
+                : stickyShrink && menu
+                ? 'pattiesStickyShrink pattiesOpened'
+                : !stickyShrink && !menu
+                ? 'pattiesNormal'
+                : 'pattiesNormal pattiesOpened'
+            }`}></div>
+          <div
+            className={`patties ${
+              stickyShrink && !menu
+                ? 'pattiesStickyShrink'
+                : stickyShrink && menu
+                ? 'pattiesStickyShrink pattiesOpened'
+                : !stickyShrink && !menu
+                ? 'pattiesNormal'
+                : 'pattiesNormal pattiesOpened'
+            }`}></div>
+          <div
+            className={`patties ${
+              stickyShrink && !menu
+                ? 'pattiesStickyShrink'
+                : stickyShrink && menu
+                ? 'pattiesStickyShrink pattiesOpened'
+                : !stickyShrink && !menu
+                ? 'pattiesNormal'
+                : 'pattiesNormal pattiesOpened'
+            }`}></div>
+        </div>
       </header>
     </>
   );

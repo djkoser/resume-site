@@ -24,3 +24,21 @@
 #resumeHeader {
   color: $cream;
 }
+
+@media (max-width: $tabletWidth) {
+  #downloadLink {
+    font-size: 1.4em;
+  }
+  #pageIndicator {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: $mobileWidth) {
+  #downloadLink {
+    font-size: 1.2em;
+  }
+  #pageIndicator {
+    font-size: 1.2em;
+  }
+}

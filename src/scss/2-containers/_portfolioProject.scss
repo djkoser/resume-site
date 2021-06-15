@@ -59,3 +59,12 @@
 
 @include swipeFromRight(1s);
 @include swipeFromLeft(1s);
+
+@media (max-width: $tabletWidth) {
+  .portfolioButtons {
+    width: 30px;
+  }
+}
+
+@media (max-width: $mobileWidth) {
+}

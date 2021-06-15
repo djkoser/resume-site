@@ -9,10 +9,7 @@
   margin-top: $sectionPadding;
 }
 #homeDescription {
-  font-family: $playfair;
-  width: 400px;
+  width: 90vw;
+  max-width: 400px;
   margin: 30px;
-}
-#downloadLink {
-  font-size: 1.5em;
 }
