@@ -84,7 +84,7 @@ button {
   font-size: 1.2em;
 }
 button:disabled {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 button:enabled:hover {

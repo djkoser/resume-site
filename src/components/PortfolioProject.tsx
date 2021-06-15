@@ -32,8 +32,8 @@ export default function PortfolioProject() {
         <svg
           style={
             thisProject.title === 'BackyardRestoration.net'
-              ? { cursor: 'pointer', opacity: '50%' }
-              : { cursor: 'pointer', opacity: '100%' }
+              ? { cursor: 'pointer', opacity: '0.5' }
+              : { cursor: 'pointer', opacity: '1' }
           }
           id="leftButton"
           className="portfolioButtons"
@@ -44,8 +44,8 @@ export default function PortfolioProject() {
         <h4
           style={
             thisProject.title === 'BackyardRestoration.net'
-              ? { cursor: 'pointer', opacity: '50%' }
-              : { cursor: 'pointer', opacity: '100%' }
+              ? { cursor: 'pointer', opacity: '0.5' }
+              : { cursor: 'pointer', opacity: '1' }
           }>
           BackyardRestoration.net
         </h4>
@@ -54,16 +54,16 @@ export default function PortfolioProject() {
         <h4
           style={
             thisProject.title === 'TopTableGames.net'
-              ? { cursor: 'pointer', opacity: '50%' }
-              : { cursor: 'pointer', opacity: '100%' }
+              ? { cursor: 'pointer', opacity: '0.5' }
+              : { cursor: 'pointer', opacity: '1' }
           }>
           TopTableGames.net
         </h4>
         <svg
           style={
             thisProject.title === 'TopTableGames.net'
-              ? { cursor: 'pointer', opacity: '50%' }
-              : { cursor: 'pointer', opacity: '100%' }
+              ? { cursor: 'pointer', opacity: '0.5' }
+              : { cursor: 'pointer', opacity: '1' }
           }
           className="portfolioButtons"
           xmlns="http://www.w3.org/2000/svg"
