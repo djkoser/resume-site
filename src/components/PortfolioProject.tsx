@@ -30,23 +30,41 @@ export default function PortfolioProject() {
     <div className="buttonBox">
       <div onClick={() => setThisProject(portfolioContent[0])} className="subButtonBox">
         <svg
-          style={thisProject.title === 'BackyardRestoration.net' ? { opacity: '50%' } : { opacity: '100%' }}
+          style={
+            thisProject.title === 'BackyardRestoration.net'
+              ? { cursor: 'pointer', opacity: '50%' }
+              : { cursor: 'pointer', opacity: '100%' }
+          }
           id="leftButton"
           className="portfolioButtons"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path d="M14 12l-14 9v-18l14 9zm-4-9v4l8.022 5-8.022 5v4l14-9-14-9z" />
         </svg>
-        <h4 style={thisProject.title === 'BackyardRestoration.net' ? { opacity: '50%' } : { opacity: '100%' }}>
+        <h4
+          style={
+            thisProject.title === 'BackyardRestoration.net'
+              ? { cursor: 'pointer', opacity: '50%' }
+              : { cursor: 'pointer', opacity: '100%' }
+          }>
           BackyardRestoration.net
         </h4>
       </div>
       <div onClick={() => setThisProject(portfolioContent[1])} className="subButtonBox">
-        <h4 style={thisProject.title === 'TopTableGames.net' ? { opacity: '50%' } : { opacity: '100%' }}>
+        <h4
+          style={
+            thisProject.title === 'TopTableGames.net'
+              ? { cursor: 'pointer', opacity: '50%' }
+              : { cursor: 'pointer', opacity: '100%' }
+          }>
           TopTableGames.net
         </h4>
         <svg
-          style={thisProject.title === 'TopTableGames.net' ? { opacity: '50%' } : { opacity: '100%' }}
+          style={
+            thisProject.title === 'TopTableGames.net'
+              ? { cursor: 'pointer', opacity: '50%' }
+              : { cursor: 'pointer', opacity: '100%' }
+          }
           className="portfolioButtons"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
@@ -82,8 +100,8 @@ export default function PortfolioProject() {
           <h3 className="projectSubheader">Details</h3>
           <article>{thisProject.details}</article>
         </div>
-        {buttonBox}
       </div>
+      {buttonBox}
     </section>
   );
 }

@@ -54,7 +54,8 @@ h4 {
 a {
   padding: 4px;
 }
-a:hover {
+header > a:hover,
+section > a:hover {
   background-color: $grey;
   border-bottom: solid $cream;
   border-top: solid $cream;
