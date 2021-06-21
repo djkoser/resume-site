@@ -1,0 +1,35 @@
+{
+  "short_name": "David Koser",
+  "name": "David Koser - Web Developer",
+  "icons": [
+    {
+      "src": "/media/favicons/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/media/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/media/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/media/favicons/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/media/favicons/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#66216e",
+  "background_color": "#6a7062"
+}
