@@ -59,7 +59,8 @@ a {
 
 header.stickyShrink > div a:hover,
 section > a:hover,
-li > a:hover {
+li > a:hover,
+#projectDescription > a:hover {
   background-color: $grey;
   border-bottom: solid $cream;
   border-top: solid $cream;

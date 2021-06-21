@@ -95,6 +95,9 @@ export default function PortfolioProject() {
               return acc;
             }, '')}
           </article>
+          <a id="gitHubLink" href={thisProject.gitHubRepo} rel="noreferrer" target="_blank">
+            GitHub Repository
+          </a>
           <h3 className="projectSubheader">Project Purpose</h3>
           <article>{thisProject.purpose}</article>
           <h3 className="projectSubheader">Details</h3>

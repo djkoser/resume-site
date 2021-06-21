@@ -5,6 +5,7 @@ export interface Project {
   details: string;
   href: string;
   images: string[];
+  gitHubRepo: string;
 }
 export interface ReduxState {
   darkmode: boolean;
@@ -56,7 +57,8 @@ const initialState: ReduxState = {
         'media/br/backyardRestoration8.png',
         'media/br/backyardRestoration9.png',
         'media/br/backyardRestoration10.png'
-      ]
+      ],
+      gitHubRepo: 'https://github.com/djkoser/backyard_restoration'
     },
     {
       title: 'TopTableGames.net',
@@ -101,7 +103,8 @@ const initialState: ReduxState = {
         'media/ttg/topTableGames8.png',
         'media/ttg/topTableGames9.png',
         'media/ttg/topTableGames10.png'
-      ]
+      ],
+      gitHubRepo: 'https://github.com/boardgame-project/boardgame-project'
     }
   ]
 };
