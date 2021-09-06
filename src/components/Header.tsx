@@ -6,6 +6,8 @@ function Header() {
   const [menu, setMenu] = useState(false);
   useEffect(() => {
     const trackScroll: () => void = () => {
+      // How far above titles should header underline initiate switch - corresponds to section padding.
+      const sectionOffset = 50;
       const home = document.querySelector('#home');
       const aboutMe = document.querySelector('#aboutMe');
       const contactInfo = document.querySelector('#contactInfo');
@@ -19,11 +21,11 @@ function Header() {
         resume?.id === 'resume' &&
         portfolio?.id === 'portfolioProject'
       ) {
-        const homeTop = Math.round(home.getBoundingClientRect().top);
-        const contactInfoTop = Math.round(contactInfo.getBoundingClientRect().top);
-        const aboutMeTop = Math.round(aboutMe.getBoundingClientRect().top);
-        const resumeTop = Math.round(resume.getBoundingClientRect().top);
-        const portfolioTop = Math.round(portfolio.getBoundingClientRect().top);
+        const homeTop = Math.round(home.getBoundingClientRect().top) - 50;
+        const contactInfoTop = Math.round(contactInfo.getBoundingClientRect().top) - sectionOffset;
+        const aboutMeTop = Math.round(aboutMe.getBoundingClientRect().top) - sectionOffset;
+        const resumeTop = Math.round(resume.getBoundingClientRect().top) - sectionOffset;
+        const portfolioTop = Math.round(portfolio.getBoundingClientRect().top) - sectionOffset;
 
         if (window.scrollY === 0) {
           setStickyShrink(false);

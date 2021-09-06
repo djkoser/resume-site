@@ -5,21 +5,20 @@ export default function AboutMe() {
     <section id="aboutMe">
       <h2>About Me</h2>
       <article className="textBlocks">
-        I am an emerging web developer at DevMountain Student Developers, and recent graduate of the University of
-        Minnesota with a Master of Professional Studies in Horticulture. Currently, I am seeking opportunities in web
-        development and software engineering, but am also open to positions related to ecological/landscape design,
-        ecological restoration, greenhouse management, extension education and plant health. Beyond this, I am strongly
-        interested in promoting environmental sustainability as well as scientific and academic writing. Prior to
-        obtaining a certificate in web-development from DevMountain in May of 2021 and a Master of Professional Studies
-        in Horticulture in May of 2020, I graduated with a Bachelor of Arts in Biology from Saint Olaf College in May of
-        2015.
+        I am a software engineer at Olive, a recent graduate of DevMountain&apos;s full-stack web-development coding
+        boot camp, and a recent graduate of the University of Minnesota with a Master of Professional Studies in
+        Horticulture. Prior to this, I received a Bachelor of Arts in Biology from Saint Olaf College in May of 2015. If
+        my employment status were to change, I would be seeking opportunities related to software engineering and web
+        development, but am also open to positions related to ecological/landscape design, ecological restoration,
+        greenhouse management, extension education and plant health. Beyond this, I am strongly interested in promoting
+        environmental sustainability, entry-level IT work, as well as scientific and academic writing.
         <br />
         <br />
-        My DevMountain coursework covered full-stack web development technologies in a React-based environment. More
+        My DevMountain coursework covered full-stack web development technologies in a React.js environment. More
         specifically, these primarily included: Javascript, React, Redux, NodeJs, Express, PostgreSQL, Massive, CSS,
         HTML5, Git, Github, Heroku, Jest, bcrypt and axios. The curriculum also involved completion of two large
         projects, including a full-stack personal project website, as well as a full-stack group project website. The
-        latter was completed by a group of three students, including myself, within a remote environment leveraging git,
+        latter was completed by a group of three students, including myself, within a remote environment leveraging Git,
         GitHub and Trello for project management.
         <br />
         <br />

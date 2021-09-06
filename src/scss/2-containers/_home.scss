@@ -4,6 +4,20 @@
 #headshot {
   max-width: 300px;
 }
+
+#headerBox {
+  @extend %columnFlex;
+  border: solid 10px $purple;
+  width: 90vw;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+}
+
+#h2Override {
+  margin-bottom: 0px;
+}
+
 #headDesc {
   @extend %wrapFlex;
   margin-top: $sectionPadding;
