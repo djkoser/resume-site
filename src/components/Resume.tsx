@@ -1,9 +1,6 @@
-import { doc } from 'prettier';
 import React, { useState, useEffect } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
 
 export default function Resume() {
   const [numPages, setNumPages] = useState(0);

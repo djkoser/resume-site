@@ -7,7 +7,13 @@ export default function PortfolioProject() {
   const portfolioContent: Project[] = useSelector((state: ReduxState) => state.portfolioContent);
   const [thisProject, setThisProject] = useState<Project>(portfolioContent[0]);
   // eslint-disable-next-line no-undef
-  const [mappedSlides, setMappedSlides] = useState<JSX.Element[]>();
+  const [mappedSlides, setMappedSlides] = useState<JSX.Element[]>([
+    <a key={thisProject.href} href={thisProject.href} rel="noreferrer" target="_blank">
+      <div className="each-slide">
+        <img src={thisProject.href}></img>
+      </div>
+    </a>
+  ]);
   useEffect(() => {
     setMappedSlides(
       thisProject.images.map((el) => (
@@ -18,7 +24,7 @@ export default function PortfolioProject() {
         </a>
       ))
     );
-  }, [thisProject]);
+  }, [mappedSlides]);
 
   const fadeProperties = {
     duration: 5000,
