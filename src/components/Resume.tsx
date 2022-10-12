@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import { RESUME_FILENAME } from '../global/fileNames';
 
 export default function Resume() {
   const [numPages, setNumPages] = useState(0);
@@ -45,11 +46,11 @@ export default function Resume() {
   return (
     <section id="resume">
       <h2 id="resumeHeader">My Resume</h2>
-      <a id="downloadLink" href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
+      <a id="downloadLink" href={`/media/${RESUME_FILENAME}`} target="_blank" rel="noreferrer" download>
         Download
       </a>
-      <a href="/media/David_Koser_Web_Developer_Resume.pdf" target="_blank" download>
-        <Document file="/media/David_Koser_Web_Developer_Resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+      <a href={`/media/${RESUME_FILENAME}`} target="_blank" rel="noreferrer" download>
+        <Document file={`/media/${RESUME_FILENAME}`} onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} width={parentWidth ? parentWidth - 10 : 0} />
         </Document>
       </a>
