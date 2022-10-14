@@ -5,13 +5,13 @@ export default function AboutMe() {
     <section id="aboutMe">
       <h2>About Me</h2>
       <article className="textBlocks">
-        I am a software engineer at Olive, a recent graduate of DevMountain&apos;s full-stack web-development coding
-        boot camp, and a recent graduate of the University of Minnesota with a Master of Professional Studies in
-        Horticulture. Prior to this, I received a Bachelor of Arts in Biology from Saint Olaf College in May of 2015. If
-        my employment status were to change, I would be seeking opportunities related to software engineering and web
-        development, but am also open to positions related to ecological/landscape design, ecological restoration,
-        greenhouse management, extension education and plant health. Beyond this, I am strongly interested in promoting
-        environmental sustainability, entry-level IT work, as well as scientific and academic writing.
+        I am a software engineer at Olive, a graduate of DevMountain&apos;s full-stack web-development coding boot camp,
+        and hold a Master of Professional Studies in Horticulture from the University of Minnesota. Prior to this, I
+        received a Bachelor of Arts in Biology from Saint Olaf College. If my employment status were to change, I would
+        be seeking opportunities related to software engineering and web development, but am also open to positions
+        related to ecological/landscape design, ecological restoration, greenhouse management, extension education and
+        plant health. Beyond this, I am strongly interested in promoting environmental sustainability, entry-level IT
+        work, as well as scientific and academic writing.
         <br />
         <br />
         My DevMountain coursework covered full-stack web development technologies in a React.js environment. More
