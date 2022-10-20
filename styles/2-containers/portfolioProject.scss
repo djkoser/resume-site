@@ -1,0 +1,78 @@
+@use "../1-globals/variables.scss";
+@use "../1-globals/extensions.scss";
+@use "../1-globals/mixins.scss";
+
+#portfolioProject {
+  background-color: variables.$grey;
+  display: inline-block;
+}
+#portfolioProject > * {
+  color: variables.$cream;
+}
+.each-slide {
+  @extend %rowFlex;
+  height: calc(100vh - (#{variables.$sectionPadding} * 2));
+  width: 100%;
+}
+.each-slide > img {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+}
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:before {
+  background: variables.$cream;
+}
+.buttonBox,
+.subButtonBox {
+  @extend %wrapFlex;
+  width: 100%;
+}
+.buttonBox {
+  margin: 20px 0px 20px 0px;
+}
+.subButtonBox {
+  width: fit-content;
+  margin: auto;
+}
+.subButtonBox > * {
+  transition: all 1s;
+}
+#projectTitle {
+  color: variables.$cream;
+}
+.portfolioButtons {
+  margin: auto;
+  fill: variables.$cream;
+  width: 50px;
+}
+#leftButton {
+  transform: rotate(180deg);
+}
+#projectDescription {
+  width: 100%;
+  @extend %columnFlex;
+}
+#technologyList {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#gitHubLink {
+  font-size: 1.4em;
+}
+
+.projectSubheader {
+  margin: 30px 0px 30px 0px;
+}
+
+@include swipeFromRight(1s);
+@include swipeFromLeft(1s);
+
+@media (max-width: variables.$tabletWidth) {
+  .portfolioButtons {
+    width: 30px;
+  }
+}
+
+@media (max-width: variables.$mobileWidth) {
+}

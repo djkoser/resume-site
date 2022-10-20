@@ -1,0 +1,9 @@
+@use "../1-globals/variables";
+
+#aboutMe {
+  background-color: variables.$blue;
+}
+
+#aboutMe > * {
+  color: variables.$cream;
+}

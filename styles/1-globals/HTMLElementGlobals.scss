@@ -1,0 +1,144 @@
+@use "variables";
+@use "extensions";
+* {
+  box-sizing: border-box;
+}
+#root,
+.App {
+  min-width: 100vw;
+}
+#root {
+  background-color: variables.$cream;
+}
+
+.display {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+h2,
+h3,
+h4 {
+  font-family: variables.$montserrat;
+}
+
+h1 {
+  font-family: variables.$cormorant;
+  font-size: 4.5em;
+}
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 2em;
+}
+h4 {
+  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+}
+
+a {
+  padding: 4px;
+}
+
+header.stickyShrink > div a:hover,
+section > a:hover,
+li > a:hover,
+#projectDescription > a:hover {
+  background-color: variables.$grey;
+  border-bottom: solid variables.$cream;
+  border-top: solid variables.$cream;
+  box-shadow: none;
+}
+
+header.normal > div a:hover {
+  background-color: variables.$purple;
+  color: variables.$cream;
+  border-radius: 5px;
+}
+
+section {
+  @extend %columnFlex;
+  overflow-x: hidden;
+  padding: variables.$sectionPadding;
+  width: 100vw;
+}
+
+article {
+  font-family: variables.$playfair;
+  font-size: 1.2em;
+  line-height: 2;
+  max-width: 900px;
+}
+
+button {
+  border: none;
+  background-color: variables.$blue;
+  color: variables.$cream;
+  border-radius: 5px;
+  font-family: variables.$montserrat;
+  font-size: 1.2em;
+}
+button:disabled {
+  opacity: 0.5;
+}
+
+button:enabled:hover {
+  background-color: variables.$purple;
+}
+
+@media (max-width: variables.$tabletWidth) {
+  h1 {
+    font-size: 3.5em;
+    max-width: 400px;
+  }
+  h2 {
+    font-size: 2.3em;
+  }
+  h3 {
+    font-size: 1.8em;
+  }
+  h4 {
+    font-size: 1.3em;
+  }
+  article {
+    font-size: 1em;
+    margin: 30px;
+  }
+  section {
+    padding: variables.$sectionPadding 0px variables.$sectionPadding 0px;
+  }
+}
+
+@media (max-width: variables.$mobileWidth) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
+  h3 {
+    font-size: 1.6em;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
+  article {
+    font-size: 1em;
+    margin: 30px;
+  }
+  section {
+    padding: variables.$sectionPadding 0px variables.$sectionPadding 0px;
+  }
+}
