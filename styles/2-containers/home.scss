@@ -1,8 +1,10 @@
 @use "../1-globals/variables.scss";
 @use "../1-globals/extensions.scss";
 
+#home,
 #home > * {
   color: variables.$grey;
+  background-color: variables.$cream;
 }
 #headshot {
   max-width: 300px;
