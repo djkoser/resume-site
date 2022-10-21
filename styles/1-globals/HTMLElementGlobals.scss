@@ -3,11 +3,11 @@
 * {
   box-sizing: border-box;
 }
-#root,
+#__next,
 .App {
   min-width: 100vw;
 }
-#root {
+#__next {
   background-color: variables.$cream;
 }
 
