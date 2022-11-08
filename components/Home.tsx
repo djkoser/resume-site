@@ -20,11 +20,12 @@ export function Home() {
         <article className="textBlocks" id="homeDescription">
           Hello! My name is David Koser
           <br />I am an emerging software engineer and web developer focusing on
-          Typescript in a React.js environment. My resume can be viewed and
-          downloaded witin the &quot;Resume&quot; section. Screenshots,
-          descriptions and links to my previous projects and their associated
-          GitHub respositories can also be found within the &quot;Projects&quot;
-          section.
+          Typescript applied to Node.js and React.js. Currently, I am also actively
+          improving my mastery of AWS and associated cloud-based technologies.
+          My resume can be viewed and downloaded witin the &quot;Resume&quot;
+          section. Screenshots, descriptions and links to my previous projects
+          and their associated GitHub respositories can also be found within
+          the &quot;Projects&quot; section.
         </article>
       </div>
     </section>
