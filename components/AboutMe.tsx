@@ -53,7 +53,7 @@ export function AboutMe() {
         skills and technical abilities.
         <br />
         <br />
-        Thank you for taking an interst in my portfolio and I look forward to
+        Thank you for taking an interest in my portfolio and I look forward to
         hearing from you.
       </article>
     </section>
