@@ -1,7 +1,6 @@
-import React, { CSSProperties, useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Slide } from "react-slideshow-image";
-import { Project } from "../global";
-import { projectDescriptions } from "../global";
+import { Project, projectDescriptions } from "../global";
 
 export function PortfolioProject() {
   const [thisProject, setThisProject] = useState<Project>(
