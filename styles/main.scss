@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat&family=Playfair+Display&display=swap");
 @import "react-slideshow-image/dist/styles.css";
-@import "react-pdf/dist/umd/Page/AnnotationLayer.css";
+@import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+@import "react-pdf/dist/esm/Page/TextLayer.css";
 
 @import "1-globals/reset";
 @import "1-globals/variables";

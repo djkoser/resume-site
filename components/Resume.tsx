@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { RESUME_FILENAME } from "../global";
-import { Document, Page, pdfjs } from "./react-pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
 
 export default function Resume() {
   const [numPages, setNumPages] = useState(0);

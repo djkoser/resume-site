@@ -30,7 +30,7 @@ export function PortfolioProject() {
         </a>
       ))
     );
-  }, [mappedSlides]);
+  }, [thisProject]);
 
   const fadeProperties = {
     duration: 5000,

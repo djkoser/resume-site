@@ -15,6 +15,8 @@ export function Home() {
             alt="David Koser headshot"
             height={1327}
             width={928}
+            style={{ width: "100%", height: "auto" }}
+            priority={true}
           ></Image>
         </div>
         <article className="textBlocks" id="homeDescription">
