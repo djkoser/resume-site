@@ -5,7 +5,7 @@ export function AboutMe() {
     <section id="aboutMe">
       <h2>About Me</h2>
       <article className="textBlocks">
-        I am a software engineer at Olive, a graduate of DevMountain's
+        I am a software engineer at Olive, a graduate of DevMountain&#39;s
         full-stack web-development coding boot camp, and hold a Master of
         Professional Studies in Horticulture from the University of Minnesota.
         Prior to this, I received a Bachelor of Arts in Biology from Saint Olaf
@@ -34,7 +34,7 @@ export function AboutMe() {
         <br />
         When coupling my masters coursework with my previous work experience and
         participation in a greenhouse production and plant-health-oriented
-        horticultural internship at Bachman's Inc. in 2019, I also offer a
+        horticultural internship at Bachman&#39;s Inc. in 2019, I also offer a
         foundational understanding of many aspects of horticulture within
         commercial settings, including: plant pathology, greenhouse management,
         organic fruit production and viticulture, organic vegetable production,

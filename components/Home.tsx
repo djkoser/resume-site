@@ -24,10 +24,10 @@ export function Home() {
           <br />I am an emerging software engineer and web developer focusing on
           Typescript applied to Node.js and React.js. Currently, I am also
           actively improving my mastery of AWS and associated cloud-based
-          technologies. My resume can be viewed and downloaded within the
-          "Resume" section. Screenshots, descriptions and links to my previous
-          projects and their associated GitHub repositories can also be found
-          within the "Projects" section.
+          technologies. My resume can be viewed and downloaded within the Resume
+          section. Screenshots, descriptions and links to my previous projects
+          and their associated GitHub repositories can also be found within the
+          Projects section.
         </article>
       </div>
     </section>
