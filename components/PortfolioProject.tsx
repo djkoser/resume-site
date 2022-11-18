@@ -15,7 +15,7 @@ export function PortfolioProject() {
       target="_blank"
     >
       <div className="each-slide">
-        <img src={thisProject.images[0]}></img>
+        <img alt={thisProject.title} src={thisProject.images[0]}></img>
       </div>
     </a>,
   ]);
@@ -24,7 +24,7 @@ export function PortfolioProject() {
       thisProject.images.map((el) => (
         <a key={el} href={thisProject.href} rel="noreferrer" target="_blank">
           <div className="each-slide">
-            <img src={el}></img>
+            <img alt={thisProject.title} src={el}></img>
           </div>
         </a>
       ))
@@ -45,7 +45,7 @@ export function PortfolioProject() {
       >
         <svg
           style={
-            thisProject.title === "BackyardRestoration.net"
+            thisProject.title === "BackyardRestoration.net (No Longer Hosted)"
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
@@ -58,12 +58,14 @@ export function PortfolioProject() {
         </svg>
         <h4
           style={
-            thisProject.title === "BackyardRestoration.net"
+            thisProject.title === "BackyardRestoration.net (No Longer Hosted)"
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
         >
           BackyardRestoration.net
+          <br />
+          (No Longer Hosted)
         </h4>
       </div>
       <div
@@ -72,16 +74,18 @@ export function PortfolioProject() {
       >
         <h4
           style={
-            thisProject.title === "TopTableGames.net"
+            thisProject.title === "TopTableGames.net (No Longer Hosted)"
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
         >
           TopTableGames.net
+          <br />
+          (No Longer Hosted)
         </h4>
         <svg
           style={
-            thisProject.title === "TopTableGames.net"
+            thisProject.title === "TopTableGames.net (No Longer Hosted)"
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
