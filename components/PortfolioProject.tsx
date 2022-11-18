@@ -36,7 +36,7 @@ export function PortfolioProject() {
     pauseOnHover: true,
     indicators: true,
   };
-
+  // TODO Make this section more dynamic -> bad code
   const buttonBox = (
     <div className="buttonBox">
       <div
@@ -64,8 +64,6 @@ export function PortfolioProject() {
           }
         >
           BackyardRestoration.net
-          <br />
-          (No Longer Hosted)
         </h4>
       </div>
       <div
@@ -80,8 +78,6 @@ export function PortfolioProject() {
           }
         >
           TopTableGames.net
-          <br />
-          (No Longer Hosted)
         </h4>
         <svg
           style={
