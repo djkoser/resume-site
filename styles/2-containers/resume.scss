@@ -28,7 +28,7 @@
 }
 
 @media (max-width: variables.$tabletWidth) {
-  #downloadLink {
+  #gDriveLink {
     font-size: 1.4em;
   }
   #pageIndicator {
@@ -37,7 +37,7 @@
 }
 
 @media (max-width: variables.$mobileWidth) {
-  #downloadLink {
+  #gDriveLink {
     font-size: 1.2em;
   }
   #pageIndicator {

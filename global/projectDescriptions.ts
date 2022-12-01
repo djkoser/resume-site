@@ -55,7 +55,7 @@ export const projectDescriptions: Project[] = [
     gitHubRepo: "https://github.com/djkoser/backyard_restoration",
   },
   {
-    title: "TopTableGames.net (No Longer Hosted)",
+    title: "TopTableGames.net",
     technologies: [
       "TypeScript",
       "JavaScript",
@@ -74,7 +74,7 @@ export const projectDescriptions: Project[] = [
       "GitHub",
       "Postman",
       "Figma",
-      "Heroku",
+      "bit.io",
       "HTML5",
       "Bcrypt.js",
       "Axios",
@@ -84,8 +84,8 @@ export const projectDescriptions: Project[] = [
     purpose:
       "TopTableGames.net was completed by two other developers, including myself, in three weeks. The idea for this project was inspired by my board-game-enthusiast colleagues’ desire to create a place for other board-game enthusiasts to find new games, track their plays, rate games and read reviews. There is a public-facing portion of the site which allows unregistered users to search for games using a number of search criteria, view game details and read associated game reviews. In addition, registered users have the option to add games to their virtual library, track the total number of plays for each game, and rate and review these games, which subsequently become publicly accessible.",
     details:
-      "The frontend is built on a TypeScript and React.js framework utilizing React-Redux for state management and React-router for navigation/routing. Prior to the start of this project, none of my team members, or myself, were familiar with TypeScript. As a result, the primary challenge of this project was learning and implementing TypeScript on the frontend within the relatively short span of three weeks. Project management and team collaboration was accomplished using git/GitHub Trello and Discord. The website was wireframed using Figma prior to coding and all styling was completed using Sass/SCSS using mobile-first design principles. Emotion.js was also used to build a number of styled components, including the button and hexagonal game rating components, the latter of which was created entirely by myself. The play count graph within the user’s library page is constructed using Chart.js. As lead backend developer, the entire backend infrastructure was built by myself in Node.js in conjunction with Express.js to handle endpoints and Massive.js to interface with a Heroku PostgreSQL database. Game information is acquired by querying the BoardgameAtlas.com API and is subsequently combined with user and rating data stored on the Heroku database. All API requests are conducted using Axios, and user authentication and password reset functionality is built using Bcrypt.js and Nodemailer.",
-    href: "https://github.com/boardgame-project/boardgame-project",
+      "The frontend is built on a TypeScript and React.js framework utilizing React-Redux for state management and React-router for navigation/routing. Prior to the start of this project, none of my team members, or myself, were familiar with TypeScript. As a result, the primary challenge of this project was learning and implementing TypeScript on the frontend within the relatively short span of three weeks. Project management and team collaboration was accomplished using git/GitHub Trello and Discord. The website was wireframed using Figma prior to coding and all styling was completed using Sass/SCSS using mobile-first design principles. Emotion.js was also used to build a number of styled components, including the button and hexagonal game rating components, the latter of which was created entirely by myself. The play count graph within the user’s library page is constructed using Chart.js. As lead backend developer, the entire backend infrastructure was built by myself in Node.js in conjunction with Express.js to handle endpoints and Massive.js to interface with a bit.io, serverless PostgreSQL database. Game information is acquired by querying the BoardgameAtlas.com API and is subsequently combined with user and rating data stored on the Heroku database. All API requests are conducted using Axios, and user authentication and password reset functionality is built using Bcrypt.js and Nodemailer.",
+    href: "https://toptablegames.net",
     images: [
       "/media/ttg/topTableGames1.png",
       "/media/ttg/topTableGames2.png",

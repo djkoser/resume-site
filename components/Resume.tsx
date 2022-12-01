@@ -1,95 +1,76 @@
 import { useEffect, useState } from "react";
-import { RESUME_FILENAME } from "../global";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
 
 export default function Resume() {
-  const [numPages, setNumPages] = useState(0);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [parentWidth, setParentWidth] = useState<undefined | number>(0);
+  const [transformScaleFactor, settransformScaleFactor] = useState<number>(1);
 
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
-    setNumPages(numPages);
-    setPageNumber(1);
-  }
-
-  function changePage(offset: number) {
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
-  }
-
-  function previousPage() {
-    changePage(-1);
-  }
-
-  function nextPage() {
-    changePage(1);
-  }
+  const iFrameWidth = 850;
 
   const windowResizeHandler = () => {
-    const resume = document.getElementById("resume");
-    if (resume?.parentElement) {
-      const width = resume.parentElement.clientWidth;
-      if (width < 1000) {
-        setParentWidth(resume.parentElement.clientWidth);
-      } else {
-        setParentWidth(1000);
-      }
-    }
+    const viewWidth = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    settransformScaleFactor(Math.min(viewWidth / iFrameWidth, 1.2));
   };
 
   useEffect(() => {
     window.addEventListener("resize", windowResizeHandler);
     windowResizeHandler();
     return () => window.removeEventListener("resize", windowResizeHandler);
-  }, []);
+  });
 
   return (
     <section id="resume">
       <h2 id="resumeHeader">My Resume</h2>
       <a
-        id="downloadLink"
-        href={`/media/${RESUME_FILENAME}`}
+        id="gDriveLink"
+        href={`https://docs.google.com/document/d/1nHf7NgOLNa1_5YHExAW224p71iUGbDs7b6HDGcgasYs/edit?usp=sharing`}
         target="_blank"
         rel="noreferrer"
         download
       >
-        Download
+        Google Drive/Download Link
       </a>
-      <a
-        href={`/media/${RESUME_FILENAME}`}
-        target="_blank"
-        rel="noreferrer"
-        download
+      <iframe
+        id="resumeIFrame"
+        src="https://docs.google.com/document/d/e/2PACX-1vQxzdPBt1jyFErK-48am_xs9MYQZXI2OpT-QkHNGfMTfZINzbBqshHyB5oVOvFN5yvl9z2OIWpY7fME/pub?embedded=true"
       >
-        <Document
-          file={`/media/${RESUME_FILENAME}`}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page
-            pageNumber={pageNumber}
-            width={parentWidth ? parentWidth - 10 : 0}
-            renderInteractiveForms={true}
-          />
-        </Document>
-      </a>
-      <div id="pageButtonBox">
-        <button
-          className="pageButton"
-          disabled={pageNumber <= 1}
-          onClick={previousPage}
-        >
-          Previous
-        </button>
-        <p id="pageIndicator">
-          Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
-        </p>
-        <button
-          className="pageButton"
-          disabled={pageNumber >= numPages}
-          onClick={nextPage}
-        >
-          Next
-        </button>
-      </div>
+        <style>
+          {`
+            #resumeIFrame {
+              width: 850px;
+              height: ${80 / transformScaleFactor}vh;
+              -moz-transform: scale(
+                ${transformScaleFactor},
+                ${transformScaleFactor}
+              );
+              -webkit-transform: scale(
+                ${transformScaleFactor},
+                ${transformScaleFactor}
+              );
+              -o-transform: scale(
+                ${transformScaleFactor},
+                ${transformScaleFactor}
+              );
+              -ms-transform: scale(
+                ${transformScaleFactor},
+                ${transformScaleFactor}
+              );
+              transform: scale(
+                ${transformScaleFactor},
+                ${transformScaleFactor}
+              );
+              -moz-transform-origin: top center;
+              -webkit-transform-origin: top center;
+              -o-transform-origin: top center;
+              -ms-transform-origin: top center;
+              transform-origin: top center;
+              margin-bottom: ${80 - 80 / transformScaleFactor}vh;
+              margin-right: ${0}px;
+            }
+          `}
+        </style>
+      </iframe>
     </section>
   );
 }

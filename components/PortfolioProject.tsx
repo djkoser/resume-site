@@ -6,6 +6,8 @@ export function PortfolioProject() {
   const [thisProject, setThisProject] = useState<Project>(
     projectDescriptions[0]
   );
+  const [pageNumber, setPageNumber] = useState<number>(0);
+
   // eslint-disable-next-line no-undef
   const [mappedSlides, setMappedSlides] = useState<JSX.Element[]>([
     <a
@@ -36,16 +38,19 @@ export function PortfolioProject() {
     pauseOnHover: true,
     indicators: true,
   };
-  // TODO Make this section more dynamic -> bad code
   const buttonBox = (
     <div className="buttonBox">
       <div
-        onClick={() => setThisProject(projectDescriptions[0])}
+        onClick={() => {
+          const newPageNumber = pageNumber === 0 ? 0 : pageNumber - 1;
+          setPageNumber(newPageNumber);
+          setThisProject(projectDescriptions[newPageNumber]);
+        }}
         className="subButtonBox"
       >
         <svg
           style={
-            thisProject.title === "BackyardRestoration.net (No Longer Hosted)"
+            thisProject.title === projectDescriptions[0].title
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
@@ -58,30 +63,43 @@ export function PortfolioProject() {
         </svg>
         <h4
           style={
-            thisProject.title === "BackyardRestoration.net (No Longer Hosted)"
+            thisProject.title === projectDescriptions[0].title
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
         >
-          BackyardRestoration.net
+          {pageNumber === 0
+            ? projectDescriptions[0].title
+            : projectDescriptions[pageNumber - 1].title}
         </h4>
       </div>
       <div
-        onClick={() => setThisProject(projectDescriptions[1])}
+        onClick={() => {
+          const newPageNumber =
+            pageNumber === projectDescriptions.length - 1
+              ? projectDescriptions.length - 1
+              : pageNumber + 1;
+          setPageNumber(newPageNumber);
+          setThisProject(projectDescriptions[newPageNumber]);
+        }}
         className="subButtonBox"
       >
         <h4
           style={
-            thisProject.title === "TopTableGames.net (No Longer Hosted)"
+            thisProject.title ===
+            projectDescriptions[projectDescriptions.length - 1].title
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
         >
-          TopTableGames.net
+          {pageNumber === projectDescriptions.length - 1
+            ? projectDescriptions[projectDescriptions.length - 1].title
+            : projectDescriptions[pageNumber + 1].title}
         </h4>
         <svg
           style={
-            thisProject.title === "TopTableGames.net (No Longer Hosted)"
+            thisProject.title ===
+            projectDescriptions[projectDescriptions.length - 1].title
               ? { cursor: "pointer", opacity: "0.5" }
               : { cursor: "pointer", opacity: "1" }
           }
