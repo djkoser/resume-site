@@ -63,6 +63,7 @@
 
 .projectSubheader {
   margin: 30px 0px 30px 0px;
+  max-width: 500px;
 }
 
 @include swipeFromRight(1s);

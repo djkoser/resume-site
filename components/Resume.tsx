@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 export default function Resume() {
   const [transformScaleFactor, settransformScaleFactor] = useState<number>(1);
 
-  const iFrameWidth = 850;
+  const iFrameWidth = 950;
 
   const windowResizeHandler = () => {
     const viewWidth = Math.max(
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
     );
-    settransformScaleFactor(Math.min(viewWidth / iFrameWidth, 1.2));
+    settransformScaleFactor(Math.min(viewWidth / iFrameWidth, 1.1));
   };
 
   useEffect(() => {

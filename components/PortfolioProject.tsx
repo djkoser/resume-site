@@ -129,6 +129,7 @@ export function PortfolioProject() {
           {mappedSlides}
         </Slide>
         <div id="projectDescription">
+          <h2 className="projectSubheader">{thisProject.title}</h2>
           <h3 className="projectSubheader">Technologies</h3>
           <article id="technologyList">
             {thisProject.technologies.reduce((acc, el, ind) => {
