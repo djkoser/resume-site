@@ -5,22 +5,22 @@ export function AboutMe() {
     <section id="aboutMe">
       <h2>About Me</h2>
       <article className="textBlocks">
-        I am a software engineer at Olive, a graduate of DevMountain&#39;s
-        full-stack web-development coding boot camp, and hold a Master of
-        Professional Studies in Horticulture from the University of Minnesota.
-        Prior to this, I received a Bachelor of Arts in Biology from Saint Olaf
-        College. I am open to opportunities in: software engineering, web
-        development, ecological/landscape design, ecological restoration,
-        greenhouse management, extension education and plant health. Beyond
-        this, I am strongly interested in promoting environmental sustainability
-        and fighting climate change, and would welcome any opportunities to do
-        so professionally. I possess strong attention to detail and have a
-        natural talent for rapport building and facilitating cross-functional
-        collaboration in support of project deliverables, allowing me to excel
-        in self-driven and team-based work environments. I am open to new
-        opportunities and am highly adaptable and teachable, possessing the
-        ability to quickly learn new: technologies, processes, and company
-        standards.
+        I am a former software engineer at Olive (recently resigned), a graduate
+        of DevMountain&#39;s full-stack web-development coding boot camp, and
+        hold a Master of Professional Studies in Horticulture from the
+        University of Minnesota. Prior to this, I received a Bachelor of Arts in
+        Biology from Saint Olaf College. I am open to opportunities in: software
+        engineering, web development, ecological/landscape design, ecological
+        restoration, greenhouse management, extension education and plant
+        health. Beyond this, I am strongly interested in promoting environmental
+        sustainability and fighting climate change, and would welcome any
+        opportunities to do so professionally. I possess strong attention to
+        detail and have a natural talent for rapport building and facilitating
+        cross-functional collaboration in support of project deliverables,
+        allowing me to excel in self-driven and team-based work environments. I
+        am open to new opportunities and am highly adaptable and teachable,
+        possessing the ability to quickly learn new: technologies, processes,
+        and company standards.
         <br />
         <br />
         My DevMountain coursework covered full-stack web development within the
