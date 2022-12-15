@@ -10,8 +10,57 @@ export interface Project {
 
 export const projectDescriptions: Project[] = [
   {
-    title: "BackyardRestoration.net (No Longer Hosted)",
+    title: "BackyardRestoration.net (AWS-Amplify)",
     technologies: [
+      "Typescript",
+      "React",
+      "React-Router",
+      "Redux",
+      "Node.js",
+      "Express.js",
+      "Node-Fetch",
+      "AWS Amplify",
+      "AWS Cognito",
+      "AWS Route 53",
+      "AWS AppSync",
+      "AWS IAM",
+      "AWS Parameter Store",
+      "AWS DynamoDB",
+      "AWS Lambda",
+      "AWS API Gateway",
+      "D3.js",
+      "CSS",
+      "Sass/SCSS",
+      "RegEx",
+      "git",
+      "GitHub",
+      "Postman",
+      "Figma",
+      "Heroku",
+      "HTML5",
+      "Stripe",
+    ],
+    purpose:
+      "The purpose of this project was to bring my BackyardRestoration.net app up-to-date with recent changes to React-Router and Redux best-practices, and to provide myself an entrypoint into the world of AWS serverless architecture. ",
+    details:
+      "The frontend is built on React.js utilizing React-Redux for state management and React-Router for navigation/routing. Prior to coding this website originally, the UI was wire-framed using Figma and all styling was completed using Sass/SCSS using mobile-first design principles. Backend infrastructure was re-built using serverless architecture leveraging the AWS Amplify and associated technologies. Upon registration, the user’s address is converted into coordinates using Google’s Geocoding API. This coordinate is then used to calculate four additional coordinates representing progressively larger ellipsoidal WGS84 bounding boxes until a NOAA weather station is identified via NOAA’s V2 API that can deliver the required 10 years of minimum and maximum daily temperature data. Received weather data is subsequently used to calculate the user’s USDA hardiness zone and calibrate all weed management actions to the user’s growing season within the D3.js weed management timeline. All API requests are conducted using node-fetch or the AWS Amplify API, and user authentication and password reset functionality is provided AWS Cognito. The native plant search API was created leveraging GraphQL via AWS AppSync, enabling users to select native plants from associated Dynamo DB tables that are most appropriate for their site conditions. The optional donation page uses the Stripe API to securely accept credit card payments. Growing parameter calculation and stripe functionalities are encapsulated within a serverless express.js backend via AWS Lambda. All non-compiled code was written in Typescript.",
+    href: "https://backyardrestoration.net",
+    images: [
+      "/media/br-amplify/1-Weeds_Amplify_Desktop.png",
+      "/media/br-amplify/2-Weeds_Amplify_Mobile.png",
+      "/media/br-amplify/3-Registration_Amplify_Desktop.png",
+      "/media/br-amplify/4-Registration_Amplify_Mobile.png",
+      "/media/br-amplify/5-Email_Confirmation_Amplify_Desktop.png",
+      "/media/br-amplify/6-Email_Confirmation_Amplify_Mobile.png",
+      "/media/br-amplify/7-Password_Reset_Amplify_Desktop.png",
+      "/media/br-amplify/8-Password_Reset_Amplify_Mobile.png",
+    ],
+    gitHubRepo: "https://github.com/djkoser/backyard_restoration/tree/main",
+  },
+  {
+    title: "BackyardRestoration.net (Server Architecture)",
+    technologies: [
+      "Typescript",
       "JavaScript",
       "React",
       "React-Router",
@@ -38,8 +87,8 @@ export const projectDescriptions: Project[] = [
     purpose:
       "Given my background in biology, horticulture and ecological restoration, I have long been interested in creating a website that would empower land owners and managers to complete their own ecological restoration projects. Very often, the costs associated with ecological restoration services are extremely high, often preventing the average land owner or manager from undertaking projects that might otherwise make a positive environmental difference. The purpose of BackyardRestoration.net is to provide these individuals with some of the tools necessary to make a positive environmental impact, specifically: a weed identification and management method selection tool, a weed management timeline and a native species selection tool (all native species in my database are currently local to the Upper Midwest, which is my area of expertise). This project was completed by me over the course of approximately four weeks including debugging and functionality add-ons.",
     details:
-      "The frontend is built on a React.js framework utilizing React-Redux for state management and React-Router for navigation/routing. Prior to coding, the website was wireframed using Figma and all styling was completed using Sass/SCSS using mobile-first design principles. Backend infrastructure was built on Node.js in conjunction with Express.js to handle endpoints and Massive.js to interface with a Heroku PostgreSQL database. Upon registration, the user’s address is converted into coordinates using Google’s Geocoding API. This coordinate is then used to calculate four additional coordinates representing progressively larger ellipsoidal WGS84 bounding boxes until a NOAA weather station is identified via NOAA’s V2 API that can deliver the required 10 years of minimum and maximum daily temperature data. Received weather data is subsequently used to calculate the user’s USDA hardiness zone and calibrate all weed management actions to the user’s growing season within the D3.js weed management timeline. All API requests are conducted using Axios, and user authentication and password reset functionality is built using Bcrypt.js and Nodemailer. The native plant search API was created using Node.js and PL/pgSQL, enabling users to select native plants from the Heroku database that are most appropriate for their site conditions. The optional donation page uses the Stripe API to securely accept credit card payments.",
-    href: "https://github.com/djkoser/backyard_restoration/tree/feature/awsAmplify",
+      "The frontend is built on React.js utilizing React-Redux for state management and React-Router for navigation/routing. Prior to coding, the website was wireframed using Figma and all styling was completed using Sass/SCSS using mobile-first design principles. Backend infrastructure was built on Node.js in conjunction with Express.js to handle endpoints and Massive.js to interface with a Heroku PostgreSQL database. Upon registration, the user’s address is converted into coordinates using Google’s Geocoding API. This coordinate is then used to calculate four additional coordinates representing progressively larger ellipsoidal WGS84 bounding boxes until a NOAA weather station is identified via NOAA’s V2 API that can deliver the required 10 years of minimum and maximum daily temperature data. Received weather data is subsequently used to calculate the user’s USDA hardiness zone and calibrate all weed management actions to the user’s growing season within the D3.js weed management timeline. All API requests are conducted using Axios, and user authentication and password reset functionality is built using Bcrypt.js and Nodemailer. The native plant search API was created using Node.js and PL/pgSQL, enabling users to select native plants from the Heroku database that are most appropriate for their site conditions. The optional donation page uses the Stripe API to securely accept credit card payments.",
+    href: "https://github.com/djkoser/backyard_restoration/tree/feature/traditionalServerArchitecture",
     images: [
       "/media/br/backyardRestoration1.png",
       "/media/br/backyardRestoration2.png",
@@ -53,7 +102,7 @@ export const projectDescriptions: Project[] = [
       "/media/br/backyardRestoration10.png",
     ],
     gitHubRepo:
-      "https://github.com/djkoser/backyard_restoration/tree/feature/awsAmplify",
+      "https://github.com/djkoser/backyard_restoration/tree/feature/traditionalServerArchitecture",
   },
   {
     title: "TopTableGames.net",
