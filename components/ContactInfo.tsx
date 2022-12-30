@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ContactInfo() {
+export const ContactInfo: React.FC = () => {
   return (
     <section id="contactInfo">
       <h2>Contact Information</h2>
@@ -14,4 +14,4 @@ export function ContactInfo() {
       </ul>
     </section>
   );
-}
+};

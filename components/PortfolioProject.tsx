@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import { Slide } from "react-slideshow-image";
 import { Project, projectDescriptions } from "../global";
 
-export function PortfolioProject() {
+export const PortfolioProject: React.FC = () => {
   const [thisProject, setThisProject] = useState<Project>(
     projectDescriptions[0]
   );
@@ -157,4 +158,4 @@ export function PortfolioProject() {
       {buttonBox}
     </section>
   );
-}
+};

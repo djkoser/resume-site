@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Resume() {
+const Resume: React.FC = () => {
   const [transformScaleFactor, settransformScaleFactor] = useState<number>(1);
 
   const iFrameWidth = 950;
@@ -73,4 +73,5 @@ export default function Resume() {
       </iframe>
     </section>
   );
-}
+};
+export default Resume;

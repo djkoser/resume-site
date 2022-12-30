@@ -1,6 +1,6 @@
 import React from "react";
 
-export function AboutMe() {
+export const AboutMe: React.FC = () => {
   return (
     <section id="aboutMe">
       <h2>About Me</h2>
@@ -55,4 +55,4 @@ export function AboutMe() {
       </article>
     </section>
   );
-}
+};

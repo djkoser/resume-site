@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export function Home() {
+export const Home: React.FC = () => {
   return (
     <section id="home">
       <div id="headerBox">
@@ -32,4 +32,4 @@ export function Home() {
       </div>
     </section>
   );
-}
+};

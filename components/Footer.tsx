@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Footer() {
+export const Footer: React.FC = () => {
   return (
     <footer id="footer">
       <a href="https://github.com/djkoser" rel="noreferrer" target="_blank">
@@ -39,4 +39,4 @@ export function Footer() {
       </a>
     </footer>
   );
-}
+};

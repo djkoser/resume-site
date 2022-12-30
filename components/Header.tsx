@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export function Header() {
+export const Header: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState("home");
   const [stickyShrink, setStickyShrink] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -160,4 +160,4 @@ export function Header() {
       </header>
     </>
   );
-}
+};
