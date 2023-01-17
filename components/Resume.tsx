@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { sendResumeEvent } from "../utilities";
 
 const Resume: React.FC = () => {
   const [transformScaleFactor, settransformScaleFactor] = useState<number>(1);
@@ -27,7 +28,7 @@ const Resume: React.FC = () => {
         href={`https://docs.google.com/document/d/1nHf7NgOLNa1_5YHExAW224p71iUGbDs7b6HDGcgasYs/edit?usp=sharing`}
         target="_blank"
         rel="noreferrer"
-        download
+        onClick={() => sendResumeEvent()}
       >
         Google Drive/Download Link
       </a>

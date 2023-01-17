@@ -1,10 +1,20 @@
-import React from "react";
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+          `,
+          }}
+        />
         <meta charSet="utf-8" prefix="og: https://ogp.me/ns#" />
         <link rel="icon" href="/media/favicons/favicon.ico" />
         <meta

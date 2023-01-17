@@ -1,11 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  sendAboutMeEvent,
+  sendContactEvent,
+  sendHomeEvent,
+  sendPortfolioEvent,
+  sendResumeEvent,
+} from "../utilities";
 
 export const Header: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState("home");
   const [stickyShrink, setStickyShrink] = useState(false);
   const [menu, setMenu] = useState(false);
   useEffect(() => {
-    const trackScroll: () => void = () => {
+    let timer: NodeJS.Timeout | null = null;
+
+    const checkScrollEnd = () => {
+      if (timer !== null) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(function () {
+        trackScroll(true);
+      }, 500);
+    };
+    const trackScroll = (sendEvent: boolean): void => {
       // How far above titles should header underline initiate switch - corresponds to section padding.
       const sectionOffset = 50;
       const home = document.querySelector("#home");
@@ -43,7 +60,7 @@ export const Header: React.FC = () => {
           resumeTop > 0 &&
           portfolioTop > 0
         ) {
-          setScrollPosition("home");
+          sendEvent ? sendHomeEvent() : setScrollPosition("home");
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -51,7 +68,7 @@ export const Header: React.FC = () => {
           resumeTop > 0 &&
           portfolioTop > 0
         ) {
-          setScrollPosition("contactInfo");
+          sendEvent ? sendContactEvent() : setScrollPosition("contactInfo");
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -59,7 +76,7 @@ export const Header: React.FC = () => {
           resumeTop > 0 &&
           portfolioTop > 0
         ) {
-          setScrollPosition("aboutMe");
+          sendEvent ? sendAboutMeEvent() : setScrollPosition("aboutMe");
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -67,7 +84,7 @@ export const Header: React.FC = () => {
           resumeTop <= 0 &&
           portfolioTop > 0
         ) {
-          setScrollPosition("resume");
+          sendEvent ? sendResumeEvent() : setScrollPosition("resume");
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -75,12 +92,16 @@ export const Header: React.FC = () => {
           resumeTop <= 0 &&
           portfolioTop <= 0
         ) {
-          setScrollPosition("portfolio");
+          sendEvent ? sendPortfolioEvent() : setScrollPosition("portfolio");
         }
       }
     };
-    document.addEventListener("scroll", trackScroll);
-    return () => document.removeEventListener("scroll", trackScroll);
+    document.addEventListener("scroll", () => trackScroll(false));
+    document.addEventListener("scroll", checkScrollEnd);
+    return () => {
+      document.removeEventListener("scroll", () => trackScroll(true));
+      document.removeEventListener("scroll", checkScrollEnd);
+    };
   }, []);
 
   return (

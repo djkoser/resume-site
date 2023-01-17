@@ -1,3 +1,13 @@
+import {
+  sendBkydRestoAmplifyConversion,
+  sendBkydRestoConversion,
+  sendGitHubBkydRestoAmplifyConversion,
+  sendGitHubBkydRestoConversion,
+  sendGitHubSaviConversion,
+  sendGitHubTTGConversion,
+  sendSaviConversion,
+  sendTTGConversion,
+} from "../utilities";
 export interface Project {
   title: string;
   technologies: string[];
@@ -6,6 +16,8 @@ export interface Project {
   href: string;
   images: string[];
   gitHubRepo: string;
+  eventFunction: () => void;
+  gitHubEventFunction: () => void;
 }
 
 export const projectDescriptions: Project[] = [
@@ -54,6 +66,8 @@ export const projectDescriptions: Project[] = [
       `/media/br-amplify/8-Password_Reset_Amplify_Mobile.png`,
     ],
     gitHubRepo: `https://github.com/djkoser/backyard_restoration/tree/main`,
+    eventFunction: sendBkydRestoAmplifyConversion,
+    gitHubEventFunction: sendGitHubBkydRestoAmplifyConversion,
   },
   {
     title: `SaviSquirrelNest.com`,
@@ -89,6 +103,8 @@ export const projectDescriptions: Project[] = [
       `/media/saviSquirrelNest/8_AboutMeMobile.png`,
     ],
     gitHubRepo: `https://github.com/djkoser/savisquirrelnest`,
+    eventFunction: sendSaviConversion,
+    gitHubEventFunction: sendGitHubSaviConversion,
   },
   {
     title: `BackyardRestoration.net (Server Architecture)`,
@@ -133,6 +149,8 @@ export const projectDescriptions: Project[] = [
       `/media/br/backyardRestoration10.png`,
     ],
     gitHubRepo: `https://github.com/djkoser/backyard_restoration/tree/feature/traditionalServerArchitecture`,
+    eventFunction: sendBkydRestoConversion,
+    gitHubEventFunction: sendGitHubBkydRestoConversion,
   },
   {
     title: `TopTableGames.net`,
@@ -177,5 +195,7 @@ export const projectDescriptions: Project[] = [
       `/media/ttg/topTableGames10.png`,
     ],
     gitHubRepo: `https://github.com/boardgame-project/boardgame-project`,
+    eventFunction: sendTTGConversion,
+    gitHubEventFunction: sendGitHubTTGConversion,
   },
 ];

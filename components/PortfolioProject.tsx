@@ -25,7 +25,13 @@ export const PortfolioProject: React.FC = () => {
   useEffect(() => {
     setMappedSlides(
       thisProject.images.map((el) => (
-        <a key={el} href={thisProject.href} rel="noreferrer" target="_blank">
+        <a
+          key={el}
+          href={thisProject.href}
+          rel="noreferrer"
+          target="_blank"
+          onClick={() => thisProject.eventFunction()}
+        >
           <div className="each-slide">
             <img alt={thisProject.title} src={el}></img>
           </div>
@@ -146,6 +152,7 @@ export const PortfolioProject: React.FC = () => {
             href={thisProject.gitHubRepo}
             rel="noreferrer"
             target="_blank"
+            onClick={() => thisProject.gitHubEventFunction()}
           >
             GitHub Repository
           </a>
