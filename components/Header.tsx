@@ -25,6 +25,16 @@ export const Header: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(ScrollPositions.home);
   const [stickyShrink, setStickyShrink] = useState(false);
   const [menu, setMenu] = useState(false);
+
+  const scrollIntoView = (
+    id: string,
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    const element = document.querySelector(`#${id}`);
+    element?.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
 
@@ -36,6 +46,7 @@ export const Header: React.FC = () => {
         trackScroll(true);
       }, 500);
     };
+
     const trackScroll = (sendEvent: boolean): void => {
       // How far above titles should header underline initiate switch - corresponds to section padding.
       const sectionOffset = 50;
@@ -152,7 +163,7 @@ export const Header: React.FC = () => {
           id={styles.linkBox}
         >
           <a
-            href="#home"
+            onClick={(e) => scrollIntoView(`${homeStyles.home}`, e)}
             className={
               scrollPosition === ScrollPositions.home ? styles.highlight : ""
             }
@@ -160,7 +171,9 @@ export const Header: React.FC = () => {
             Home
           </a>
           <a
-            href="#contactInfo"
+            onClick={(e) =>
+              scrollIntoView(`${contactInfoStyles.contactInfo}`, e)
+            }
             className={
               scrollPosition === ScrollPositions.contactInfo
                 ? styles.highlight
@@ -170,7 +183,7 @@ export const Header: React.FC = () => {
             Contact
           </a>
           <a
-            href="#aboutMe"
+            onClick={(e) => scrollIntoView(`${aboutMeStyles.aboutMe}`, e)}
             className={
               scrollPosition === ScrollPositions.aboutMe ? styles.highlight : ""
             }
@@ -178,7 +191,7 @@ export const Header: React.FC = () => {
             About Me
           </a>
           <a
-            href="#resume"
+            onClick={(e) => scrollIntoView(`${resumeStyles.resume}`, e)}
             className={
               scrollPosition === ScrollPositions.resume ? styles.highlight : ""
             }
@@ -186,7 +199,9 @@ export const Header: React.FC = () => {
             Resume
           </a>
           <a
-            href="#portfolioProject"
+            onClick={(e) =>
+              scrollIntoView(`${portfolioStyles.portfolioProject}`, e)
+            }
             className={
               scrollPosition === ScrollPositions.portfolio
                 ? styles.highlight
