@@ -6,9 +6,23 @@ import {
   sendPortfolioEvent,
   sendResumeEvent,
 } from "../utilities";
+import styles from "../styles/2-containers/header.module.sass";
+import homeStyles from "../styles/2-containers/home.module.sass";
+import aboutMeStyles from "../styles/2-containers/aboutMe.module.sass";
+import contactInfoStyles from "../styles/2-containers/contactInfo.module.sass";
+import resumeStyles from "../styles/2-containers/resume.module.sass";
+import portfolioStyles from "../styles/2-containers/portfolioProject.module.sass";
+
+enum ScrollPositions {
+  home,
+  contactInfo,
+  aboutMe,
+  resume,
+  portfolio,
+}
 
 export const Header: React.FC = () => {
-  const [scrollPosition, setScrollPosition] = useState("home");
+  const [scrollPosition, setScrollPosition] = useState(ScrollPositions.home);
   const [stickyShrink, setStickyShrink] = useState(false);
   const [menu, setMenu] = useState(false);
   useEffect(() => {
@@ -25,18 +39,22 @@ export const Header: React.FC = () => {
     const trackScroll = (sendEvent: boolean): void => {
       // How far above titles should header underline initiate switch - corresponds to section padding.
       const sectionOffset = 50;
-      const home = document.querySelector("#home");
-      const aboutMe = document.querySelector("#aboutMe");
-      const contactInfo = document.querySelector("#contactInfo");
-      const resume = document.querySelector("#resume");
-      const portfolio = document.querySelector("#portfolioProject");
 
+      const home = document.querySelector(`#${homeStyles.home}`);
+      const aboutMe = document.querySelector(`#${aboutMeStyles.aboutMe}`);
+      const contactInfo = document.querySelector(
+        `#${contactInfoStyles.contactInfo}`
+      );
+      const resume = document.querySelector(`#${resumeStyles.resume}`);
+      const portfolio = document.querySelector(
+        `#${portfolioStyles.portfolioProject}`
+      );
       if (
-        home?.id === "home" &&
-        aboutMe?.id === "aboutMe" &&
-        contactInfo?.id === "contactInfo" &&
-        resume?.id === "resume" &&
-        portfolio?.id === "portfolioProject"
+        home?.getBoundingClientRect &&
+        aboutMe?.getBoundingClientRect &&
+        contactInfo?.getBoundingClientRect &&
+        resume?.getBoundingClientRect &&
+        portfolio?.getBoundingClientRect
       ) {
         const homeTop = Math.round(home.getBoundingClientRect().top) - 50;
         const contactInfoTop =
@@ -60,7 +78,7 @@ export const Header: React.FC = () => {
           resumeTop > 0 &&
           portfolioTop > 0
         ) {
-          sendEvent ? sendHomeEvent() : setScrollPosition("home");
+          sendEvent ? sendHomeEvent() : setScrollPosition(ScrollPositions.home);
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -68,7 +86,9 @@ export const Header: React.FC = () => {
           resumeTop > 0 &&
           portfolioTop > 0
         ) {
-          sendEvent ? sendContactEvent() : setScrollPosition("contactInfo");
+          sendEvent
+            ? sendContactEvent()
+            : setScrollPosition(ScrollPositions.contactInfo);
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -76,7 +96,9 @@ export const Header: React.FC = () => {
           resumeTop > 0 &&
           portfolioTop > 0
         ) {
-          sendEvent ? sendAboutMeEvent() : setScrollPosition("aboutMe");
+          sendEvent
+            ? sendAboutMeEvent()
+            : setScrollPosition(ScrollPositions.aboutMe);
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -84,7 +106,9 @@ export const Header: React.FC = () => {
           resumeTop <= 0 &&
           portfolioTop > 0
         ) {
-          sendEvent ? sendResumeEvent() : setScrollPosition("resume");
+          sendEvent
+            ? sendResumeEvent()
+            : setScrollPosition(ScrollPositions.resume);
         } else if (
           homeTop <= 0 &&
           contactInfoTop <= 0 &&
@@ -92,91 +116,96 @@ export const Header: React.FC = () => {
           resumeTop <= 0 &&
           portfolioTop <= 0
         ) {
-          sendEvent ? sendPortfolioEvent() : setScrollPosition("portfolio");
+          sendEvent
+            ? sendPortfolioEvent()
+            : setScrollPosition(ScrollPositions.portfolio);
         }
       }
     };
     document.addEventListener("scroll", () => trackScroll(false));
     document.addEventListener("scroll", checkScrollEnd);
     return () => {
-      document.removeEventListener("scroll", () => trackScroll(true));
+      document.removeEventListener("scroll", () => trackScroll(false));
       document.removeEventListener("scroll", checkScrollEnd);
     };
   }, []);
 
+  const getPattiesDivClassName = () =>
+    `${styles.patties} ${
+      stickyShrink && !menu
+        ? styles.pattiesStickyShrink
+        : stickyShrink && menu
+        ? `${styles.pattiesStickyShrink} ${styles.pattiesOpened}`
+        : !stickyShrink && !menu
+        ? styles.pattiesNormal
+        : `${styles.pattiesNormal} ${styles.pattiesOpened}`
+    }`;
+
   return (
     <>
-      <header id="header" className={stickyShrink ? "stickyShrink" : "normal"}>
-        <div className={menu ? "menuOpen" : "menuClosed"} id="linkBox">
+      <header
+        id={styles.header}
+        className={stickyShrink ? styles.stickyShrink : styles.normal}
+      >
+        <div
+          className={menu ? styles.menuOpen : styles.menuClosed}
+          id={styles.linkBox}
+        >
           <a
             href="#home"
-            className={scrollPosition === "home" ? "highlight" : ""}
+            className={
+              scrollPosition === ScrollPositions.home ? styles.highlight : ""
+            }
           >
             Home
           </a>
           <a
             href="#contactInfo"
-            className={scrollPosition === "contactInfo" ? "highlight" : ""}
+            className={
+              scrollPosition === ScrollPositions.contactInfo
+                ? styles.highlight
+                : ""
+            }
           >
             Contact
           </a>
           <a
             href="#aboutMe"
-            className={scrollPosition === "aboutMe" ? "highlight" : ""}
+            className={
+              scrollPosition === ScrollPositions.aboutMe ? styles.highlight : ""
+            }
           >
             About Me
           </a>
           <a
             href="#resume"
-            className={scrollPosition === "resume" ? "highlight" : ""}
+            className={
+              scrollPosition === ScrollPositions.resume ? styles.highlight : ""
+            }
           >
             Resume
           </a>
           <a
             href="#portfolioProject"
-            className={scrollPosition === "portfolio" ? "highlight" : ""}
+            className={
+              scrollPosition === ScrollPositions.portfolio
+                ? styles.highlight
+                : ""
+            }
           >
             Portfolio
           </a>
         </div>
         <div
           onClick={() => setMenu(!menu)}
-          className={stickyShrink ? "hamburgerStickyShrink" : "hamburgerNormal"}
-          id="hamburger"
+          className={
+            stickyShrink ? styles.hamburgerStickyShrink : styles.hamburgerNormal
+          }
+          id={styles.hamburger}
         >
-          <div
-            className={`patties ${
-              stickyShrink && !menu
-                ? "pattiesStickyShrink"
-                : stickyShrink && menu
-                ? "pattiesStickyShrink pattiesOpened"
-                : !stickyShrink && !menu
-                ? "pattiesNormal"
-                : "pattiesNormal pattiesOpened"
-            }`}
-          ></div>
-          <div
-            className={`patties ${
-              stickyShrink && !menu
-                ? "pattiesStickyShrink"
-                : stickyShrink && menu
-                ? "pattiesStickyShrink pattiesOpened"
-                : !stickyShrink && !menu
-                ? "pattiesNormal"
-                : "pattiesNormal pattiesOpened"
-            }`}
-          ></div>
-          <div
-            className={`patties ${
-              stickyShrink && !menu
-                ? "pattiesStickyShrink"
-                : stickyShrink && menu
-                ? "pattiesStickyShrink pattiesOpened"
-                : !stickyShrink && !menu
-                ? "pattiesNormal"
-                : "pattiesNormal pattiesOpened"
-            }`}
-          ></div>
+          <div className={getPattiesDivClassName()}></div>
+          <div className={getPattiesDivClassName()}></div>
+          <div className={getPattiesDivClassName()}></div>
         </div>
       </header>
     </>

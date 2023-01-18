@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { sendResumeEvent } from "../utilities";
+import styles from "../styles/2-containers/resume.module.sass";
 
 const Resume: React.FC = () => {
-  const [transformScaleFactor, settransformScaleFactor] = useState<number>(1);
+  const [transformScaleFactor, setTransformScaleFactor] = useState<number>(1);
 
   const iFrameWidth = 950;
 
@@ -11,7 +12,7 @@ const Resume: React.FC = () => {
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
     );
-    settransformScaleFactor(Math.min(viewWidth / iFrameWidth, 1.1));
+    setTransformScaleFactor(Math.min(viewWidth / iFrameWidth, 1.1));
   };
 
   useEffect(() => {
@@ -21,10 +22,10 @@ const Resume: React.FC = () => {
   });
 
   return (
-    <section id="resume">
-      <h2 id="resumeHeader">My Resume</h2>
+    <section id={styles.resume}>
+      <h2 id={styles.resumeHeader}>My Resume</h2>
       <a
-        id="gDriveLink"
+        id={styles.gDriveLink}
         href={`https://docs.google.com/document/d/1nHf7NgOLNa1_5YHExAW224p71iUGbDs7b6HDGcgasYs/edit?usp=sharing`}
         target="_blank"
         rel="noreferrer"

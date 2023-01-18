@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "../styles/2-containers/aboutMe.module.sass";
 
 export const AboutMe: React.FC = () => {
   return (
-    <section id="aboutMe">
+    <section id={styles.aboutMe}>
       <h2>About Me</h2>
-      <article className="textBlocks">
+      <article>
         I am a former software engineer at Olive (recently resigned), a graduate
         of DevMountain&#39;s full-stack web-development coding boot camp, and
         hold a Master of Professional Studies in Horticulture from the

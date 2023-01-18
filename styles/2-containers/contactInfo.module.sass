@@ -1,0 +1,33 @@
+@use "../1-globals/variables.sass"
+@use "../1-globals/extensions.sass"
+
+#contactInfo, #contactFormBody
+  background-color: variables.$orange
+
+#contactInfo > * 
+  color: variables.$cream
+
+#contactFormBody
+  @extend %columnFlex
+  width: 100vw
+  height: 600px
+
+.inputBox
+  max-width: 800px
+  width: 80vw
+  margin: 6px
+  @extend %rowFlexSpaceBetween
+
+.inputLabels
+  margin-right: auto
+
+.contactFormInput
+  width: 70%
+
+#textArea
+  width: 100%
+  height: 300px
+
+#sendButton
+  padding: 4px
+  font-weight: bolder

@@ -2,7 +2,10 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
-import "../styles/main.scss";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import "react-toastify/dist/ReactToastify.css";
+import "../styles/1-globals/reset.sass";
+import "../styles/1-globals/HTMLElementGlobals.sass";
 import { GA_TRACKING_ID, pageView } from "../utilities";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -40,7 +43,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <GoogleReCaptchaProvider
+        reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_PUBLIC as string}
+      >
+        <Component {...pageProps} />
+      </GoogleReCaptchaProvider>
     </>
   );
 }

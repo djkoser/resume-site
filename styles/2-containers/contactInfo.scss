@@ -1,9 +1,0 @@
-@use "../1-globals/variables.scss";
-
-#contactInfo {
-  background-color: variables.$orange;
-}
-
-#contactInfo > * {
-  color: variables.$cream;
-}

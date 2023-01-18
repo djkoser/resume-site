@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "../styles/2-containers/footer.module.sass";
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="footer">
+    <footer id={styles.footer}>
       <a href="https://github.com/djkoser" rel="noreferrer" target="_blank">
         <svg
-          className="socialIcons"
+          className={styles.socialIcons}
           height="32"
           viewBox="0 0 16 16"
           width="32"
@@ -23,7 +24,7 @@ export const Footer: React.FC = () => {
         target="_blank"
       >
         <svg
-          className="socialIcons"
+          className={styles.socialIcons}
           xmlns="http://www.w3.org/2000/svg"
           width="34"
           height="34"

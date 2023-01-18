@@ -1,0 +1,41 @@
+@use "variables"
+
+@mixin tabletWidth 
+  @media (min-width: variables.$mobileWidth) and (max-width: variables.$tabletWidth - 1)
+    @content
+
+@mixin mobileWidth 
+  @media (max-width: variables.$mobileWidth - 1) 
+    @content
+
+@mixin headerTransitionWidth 
+  @media (max-width: $headerTransitionWidth) 
+    @content
+
+@mixin swipeKeyframe($startPos, $endPos, $keyframeName) 
+  @keyframes #{$keyframeName}
+    0% 
+      transform: translateX($startPos)
+    100% 
+      transform: translateX($endPos)
+  @-moz-keyframes #{$keyframeName}  
+    0% 
+      transform: translateX($startPos)
+    100% 
+      transform: translateX($endPos)
+  @-webkit-keyframes #{$keyframeName}  
+    0% 
+      transform: translateX($startPos)
+    100% 
+      transform: translateX($endPos)
+  @-o-keyframes #{$keyframeName}  
+    0% 
+      transform: translateX($startPos)
+    100% 
+      transform: translateX($endPos)
+  @-ms-keyframes #{$keyframeName}  
+    0% 
+      transform: translateX($startPos)
+    100% 
+      transform: translateX($endPos)
+

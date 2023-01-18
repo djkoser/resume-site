@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
+import styles from "../styles/2-containers/home.module.sass";
 
 export const Home: React.FC = () => {
   return (
-    <section id="home">
-      <div id="headerBox">
+    <section id={styles.home}>
+      <div id={styles.headerBox}>
         <h1>David Koser</h1>
-        <h2 id="h2Override">Software Engineer & Web Developer</h2>
+        <h2 id={styles.h2Override}>Software Engineer & Web Developer</h2>
       </div>
-      <div id="headDesc">
-        <div id="headshot">
+      <div id={styles.headDesc}>
+        <div id={styles.headshot}>
           <Image
             src="/media/Head.jpg"
             alt="David Koser headshot"
@@ -19,7 +20,7 @@ export const Home: React.FC = () => {
             priority={true}
           ></Image>
         </div>
-        <article className="textBlocks" id="homeDescription">
+        <article id={styles.homeDescription}>
           Hello! My name is David Koser
           <br />I am an emerging software engineer and web developer focusing on
           Typescript applied to Node.js and React.js. Currently, I am also

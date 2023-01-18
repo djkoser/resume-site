@@ -1,0 +1,33 @@
+@use "../1-globals/variables.sass"
+@use "../1-globals/extensions.sass"
+
+#home > * 
+  color: variables.$grey
+
+
+#headshot 
+  max-width: 300px
+
+
+#headerBox 
+  @extend %columnFlex
+  border: solid 10px variables.$purple
+  width: 90vw
+  max-width: 500px
+  margin: auto
+  padding: 10px
+
+
+#h2Override 
+  margin-bottom: 0px
+
+
+#headDesc 
+  @extend %wrapFlex
+  margin-top: variables.$sectionPadding
+
+#homeDescription 
+  width: 90vw
+  max-width: 400px
+  margin: 30px
+
