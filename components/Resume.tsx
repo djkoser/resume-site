@@ -33,6 +33,7 @@ const Resume: React.FC = () => {
       >
         Google Drive/Download Link
       </a>
+      <br />
       <iframe
         id="resumeIFrame"
         src="https://docs.google.com/document/d/e/2PACX-1vQxzdPBt1jyFErK-48am_xs9MYQZXI2OpT-QkHNGfMTfZINzbBqshHyB5oVOvFN5yvl9z2OIWpY7fME/pub?embedded=true"

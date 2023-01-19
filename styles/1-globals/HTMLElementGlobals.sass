@@ -3,6 +3,7 @@
 @use "mixins"
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat&family=Playfair+Display&display=swap")
 @import "react-slideshow-image/dist/styles.css"
+
 * 
   box-sizing: border-box
 
@@ -99,21 +100,11 @@ strong
   letter-spacing: .02em
 
 
-header.stickyShrink > div a:hover,
-section > a:hover,
-li > a:hover,
-#projectDescription > a:hover 
-  background-color: variables.$grey
-  border-bottom: solid variables.$cream
-  border-top: solid variables.$cream
-  box-shadow: none
+section > a:hover, li > a:hover
+  @extend %stickyShrinkHover
 
-
-header.normal > div a:hover 
-  background-color: variables.$purple
-  color: variables.$cream
-  border-radius: 5px
-
+a:hover
+  cursor: pointer
 
 section 
   @extend %columnFlex
